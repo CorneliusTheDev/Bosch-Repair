@@ -57,12 +57,6 @@ $blog_posts = new WP_Query( array(
             <?php endforeach; ?>
         </div>
 
-        <!-- Active category heading -->
-        <div class="section-header" style="margin-top:56px;">
-            <span class="section-label" id="brpActiveLabel">Latest</span>
-            <h3 class="section-title" id="brpActiveTitle">Recent Blog Posts</h3>
-        </div>
-
         <?php if ( $blog_posts->have_posts() ) : ?>
 
         <!-- Posts grid -->
@@ -141,9 +135,8 @@ $blog_posts = new WP_Query( array(
 <!-- Topic labels for JS headings -->
 <script>
 var brpTopicLabels = {
-    'all': { label: 'Latest', title: 'Recent Blog Posts' },
     <?php foreach ( $topics as $t ) : ?>
-    '<?php echo esc_js( $t['slug'] ); ?>': { label: '<?php echo esc_js( $t['label'] ); ?>', title: '<?php echo esc_js( $t['label'] ); ?> Posts' },
+    '<?php echo esc_js( $t['slug'] ); ?>': { label: '<?php echo esc_js( $t['label'] ); ?>' },
     <?php endforeach; ?>
 };
 
@@ -151,8 +144,6 @@ function brpFilter( filter ) {
     var cards     = document.querySelectorAll('#brpPostGrid .post-card');
     var noResults = document.getElementById('brpNoResults');
     var grid      = document.getElementById('brpPostGrid');
-    var label     = document.getElementById('brpActiveLabel');
-    var title     = document.getElementById('brpActiveTitle');
     var btns      = document.querySelectorAll('#brpTopicFilters .btn');
     var visible   = 0;
 
@@ -181,12 +172,6 @@ function brpFilter( filter ) {
             }
         }
     });
-
-    // Update heading
-    if ( brpTopicLabels[filter] ) {
-        label.textContent = brpTopicLabels[filter].label;
-        title.textContent = brpTopicLabels[filter].title;
-    }
 
     // Show/hide no-results message
     if ( visible === 0 ) {
