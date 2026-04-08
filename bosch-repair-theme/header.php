@@ -33,14 +33,7 @@
 
             <!-- Primary Navigation -->
             <nav class="main-nav" id="main-nav" aria-label="Primary Navigation">
-                <?php
-                wp_nav_menu( array(
-                    'theme_location' => 'primary',
-                    'menu_class'     => '',
-                    'container'      => false,
-                    'fallback_cb'    => 'brp_fallback_nav',
-                ) );
-                ?>
+                <?php brp_fallback_nav(); ?>
             </nav>
 
             <!-- Header CTA -->
