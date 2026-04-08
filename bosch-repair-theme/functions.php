@@ -8,14 +8,17 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-// TEMPORARY: Run setup + flush permalinks. Remove after visiting /?brp_setup=1
-add_action( 'init', function() {
-    if ( isset( $_GET['brp_setup'] ) && current_user_can( 'manage_options' ) ) {
-        include get_template_directory() . '/inc/setup-pages.php';
-        flush_rewrite_rules();
-        wp_die( 'Setup complete! Pages created and permalinks flushed. Now remove the brp_setup code from functions.php.' );
+// Auto-setup: create all pages/posts if they don't exist yet
+add_action( 'wp_loaded', function() {
+    if ( get_transient( 'brp_auto_setup_done' ) ) return;
+    if ( get_page_by_path( 'about-us' ) ) {
+        set_transient( 'brp_auto_setup_done', true, YEAR_IN_SECONDS );
+        return;
     }
-}, 99 );
+    define( 'BRP_AUTO_SETUP', true );
+    include get_template_directory() . '/inc/setup-pages.php';
+    set_transient( 'brp_auto_setup_done', true, YEAR_IN_SECONDS );
+} );
 
 define( 'BRP_VERSION', '1.0.0' );
 define( 'BRP_DIR', get_template_directory() );

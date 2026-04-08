@@ -24,8 +24,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     require_once dirname( __FILE__, 5 ) . '/wp-load.php';
 }
 
-// Safety: only run for admins
-if ( ! current_user_can( 'manage_options' ) && ! defined( 'WP_CLI' ) ) {
+// Safety: only run for admins or auto-setup
+if ( ! current_user_can( 'manage_options' ) && ! defined( 'WP_CLI' ) && ! defined( 'BRP_AUTO_SETUP' ) ) {
     wp_die( 'Unauthorized.' );
 }
 
