@@ -8,6 +8,15 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+// TEMPORARY: Run setup + flush permalinks. Remove after visiting /?brp_setup=1
+add_action( 'init', function() {
+    if ( isset( $_GET['brp_setup'] ) && current_user_can( 'manage_options' ) ) {
+        include get_template_directory() . '/inc/setup-pages.php';
+        flush_rewrite_rules();
+        wp_die( 'Setup complete! Pages created and permalinks flushed. Now remove the brp_setup code from functions.php.' );
+    }
+}, 99 );
+
 define( 'BRP_VERSION', '1.0.0' );
 define( 'BRP_DIR', get_template_directory() );
 define( 'BRP_URI', get_template_directory_uri() );
