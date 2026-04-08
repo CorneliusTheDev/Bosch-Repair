@@ -69,21 +69,11 @@
 <?php
 // Fallback nav when no menu is assigned
 function brp_fallback_nav() {
-    $services = brp_get_services();
-    $cities   = brp_get_cities();
     echo '<ul>';
     echo '<li><a href="' . home_url() . '">Home</a></li>';
     echo '<li><a href="' . home_url( '/about-us/' ) . '">About Us</a></li>';
-    echo '<li><a href="' . get_post_type_archive_link( 'service' ) . '">Services</a><ul>';
-    foreach ( $services as $s ) {
-        echo '<li><a href="' . home_url( '/services/' . $s['slug'] . '/' ) . '">' . esc_html( $s['title'] ) . '</a></li>';
-    }
-    echo '</ul></li>';
-    echo '<li><a href="' . get_post_type_archive_link( 'city' ) . '">Cities</a><ul>';
-    foreach ( $cities as $c ) {
-        echo '<li><a href="' . home_url( '/cities/' . $c['slug'] . '/' ) . '">' . esc_html( $c['title'] ) . '</a></li>';
-    }
-    echo '</ul></li>';
+    echo '<li><a href="' . get_post_type_archive_link( 'service' ) . '">Services</a></li>';
+    echo '<li><a href="' . get_post_type_archive_link( 'city' ) . '">Cities</a></li>';
     echo '<li><a href="' . get_post_type_archive_link( 'error_code' ) . '">Error Codes</a></li>';
     echo '<li><a href="' . get_post_type_archive_link( 'guide' ) . '">Guides</a></li>';
     echo '<li><a href="' . home_url( '/blog/' ) . '">Blog</a></li>';
