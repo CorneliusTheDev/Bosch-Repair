@@ -75,7 +75,7 @@ get_header(); ?>
             <h2 style="color:white;margin-bottom:16px;">Our Service Commitment</h2>
             <p style="color:rgba(255,255,255,0.8);max-width:600px;margin:0 auto 32px;">Every Bosch appliance repair we perform is done with integrity, expertise, and respect for your home and your time. We guarantee your satisfaction.</p>
             <a href="#schedule" class="btn btn-primary btn-lg" style="margin-right:16px;">📅 Book a Repair</a>
-            <a href="tel:<?php echo BRP_PHONE_RAW; ?>" class="btn btn-secondary btn-lg" style="border-color:rgba(255,255,255,0.4);color:white;">📞 <?php echo BRP_PHONE; ?></a>
+            <a href="tel:<?php echo BRP_PHONE_RAW; ?>" class="btn btn-secondary btn-lg" style="border-color:rgba(255,255,255,0.4);color:#e30000;">📞 <?php echo BRP_PHONE; ?></a>
         </div>
 
     </div>
