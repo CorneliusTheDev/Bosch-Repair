@@ -450,6 +450,54 @@ function brp_get_faq_schema( $faqs ) {
 }
 
 // ============================================================
+// ERROR CODE VIEW TRACKING
+// ============================================================
+add_action( 'template_redirect', function() {
+    if ( ! is_singular( 'error_code' ) ) return;
+    $post_id = get_the_ID();
+    if ( ! $post_id ) return;
+    $views = get_option( 'brp_ec_views', array() );
+    $views[ $post_id ] = isset( $views[ $post_id ] ) ? $views[ $post_id ] + 1 : 1;
+    update_option( 'brp_ec_views', $views, false );
+} );
+
+function brp_get_most_searched_by_appliance( $appliance_slug ) {
+    $views = get_option( 'brp_ec_views', array() );
+    if ( empty( $views ) ) return null;
+
+    $term = get_term_by( 'slug', $appliance_slug, 'appliance_type' );
+    if ( ! $term || is_wp_error( $term ) ) return null;
+
+    $posts = get_posts( array(
+        'post_type'      => 'error_code',
+        'posts_per_page' => -1,
+        'fields'         => 'ids',
+        'tax_query'      => array( array(
+            'taxonomy' => 'appliance_type',
+            'field'    => 'slug',
+            'terms'    => $appliance_slug,
+        ) ),
+    ) );
+
+    if ( empty( $posts ) ) return null;
+
+    $best_id    = null;
+    $best_count = 0;
+    foreach ( $posts as $pid ) {
+        $count = isset( $views[ $pid ] ) ? $views[ $pid ] : 0;
+        if ( $count > $best_count ) {
+            $best_count = $count;
+            $best_id    = $pid;
+        }
+    }
+
+    if ( ! $best_id || $best_count === 0 ) return null;
+
+    $code = get_post_meta( $best_id, '_brp_error_code', true );
+    return $code ?: get_the_title( $best_id );
+}
+
+// ============================================================
 // CUSTOM EXCERPT
 // ============================================================
 function brp_excerpt_length( $length ) {

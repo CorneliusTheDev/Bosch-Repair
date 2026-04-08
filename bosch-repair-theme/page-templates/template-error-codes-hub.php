@@ -22,17 +22,6 @@ $categories = array(
     array( 'slug' => 'freezer',      'label' => 'Freezers',         'icon' => '❄️', 'desc' => 'Bosch freezer error codes and diagnostics' ),
 );
 
-// Most-searched codes per appliance (first / most common code)
-$most_searched = array(
-    'dishwasher'   => 'E15',
-    'washer'       => 'F16',
-    'dryer'        => 'E01',
-    'refrigerator' => 'E01',
-    'oven'         => 'E001',
-    'cooktop'      => 'E1',
-    'microwave'    => 'F3',
-    'freezer'      => 'E01',
-);
 ?>
 
 <section class="page-hero">
@@ -55,7 +44,7 @@ $most_searched = array(
             <?php foreach ( $categories as $cat ) :
                 $term       = get_term_by( 'slug', $cat['slug'], 'appliance_type' );
                 $code_count = ( $term && ! is_wp_error( $term ) ) ? (int) $term->count : 0;
-                $top_code   = isset( $most_searched[ $cat['slug'] ] ) ? $most_searched[ $cat['slug'] ] : '';
+                $top_code   = brp_get_most_searched_by_appliance( $cat['slug'] );
                 $page_url   = home_url( '/error-codes/' . $cat['slug'] . '/' );
             ?>
             <a href="<?php echo esc_url( $page_url ); ?>" class="ec-cat-card ec-cat-card--link">
