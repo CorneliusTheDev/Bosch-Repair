@@ -82,6 +82,11 @@ function brp_enqueue_assets() {
         BRP_URI . '/assets/css/main.css',
         array( 'brp-style' ), BRP_VERSION );
 
+    // Inline CSS overrides — bypasses Hostinger LiteSpeed Cache on static files
+    wp_add_inline_style( 'brp-main', '
+        .sidebar-phone-number { color: #e30000 !important; }
+    ' );
+
     // Main JS
     wp_enqueue_script( 'brp-main',
         BRP_URI . '/assets/js/main.js',
