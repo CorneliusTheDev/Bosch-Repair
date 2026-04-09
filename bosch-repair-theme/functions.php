@@ -20,7 +20,7 @@ add_action( 'wp_loaded', function() {
     set_transient( 'brp_auto_setup_done', true, YEAR_IN_SECONDS );
 } );
 
-define( 'BRP_VERSION', '1.0.0' );
+define( 'BRP_VERSION', '1.0.4' );
 define( 'BRP_DIR', get_template_directory() );
 define( 'BRP_URI', get_template_directory_uri() );
 define( 'BRP_PHONE', '(800) 555-0199' );

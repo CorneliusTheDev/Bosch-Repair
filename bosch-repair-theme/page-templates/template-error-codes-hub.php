@@ -44,7 +44,7 @@ $categories = array(
             <?php foreach ( $categories as $cat ) :
                 $term       = get_term_by( 'slug', $cat['slug'], 'appliance_type' );
                 $code_count = ( $term && ! is_wp_error( $term ) ) ? (int) $term->count : 0;
-                $top_code   = brp_get_most_searched_by_appliance( $cat['slug'] );
+                $top_code   = ( $code_count > 0 ) ? brp_get_most_searched_by_appliance( $cat['slug'] ) : null;
                 $page_url   = home_url( '/error-codes/' . $cat['slug'] . '/' );
             ?>
             <a href="<?php echo esc_url( $page_url ); ?>" class="ec-cat-card ec-cat-card--link">
@@ -57,8 +57,6 @@ $categories = array(
                 <hr class="ec-cat-divider">
                 <?php if ( $top_code ) : ?>
                 <div class="ec-cat-most">Most searched: <span class="ec-cat-most-code"><?php echo esc_html( $top_code ); ?></span></div>
-                <?php else : ?>
-                <div class="ec-cat-most" style="visibility:hidden;">—</div>
                 <?php endif; ?>
             </a>
             <?php endforeach; ?>
