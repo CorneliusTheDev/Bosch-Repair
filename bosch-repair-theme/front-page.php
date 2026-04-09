@@ -32,7 +32,7 @@ $reviews = array(
             </p>
             <div class="hero-cta">
                 <a href="#schedule" class="btn btn-primary btn-lg">📅 Schedule Repair</a>
-                <a href="tel:<?php echo BRP_PHONE_RAW; ?>" class="btn btn-secondary btn-lg">📞 <?php echo BRP_PHONE; ?></a>
+                <a href="tel:<?php echo BRP_PHONE_RAW; ?>" class="btn btn-secondary btn-lg" style="background:#fff;border-color:#fff;color:#e30000;">📞 <?php echo BRP_PHONE; ?></a>
             </div>
             <div class="hero-stats">
                 <div class="hero-stat">

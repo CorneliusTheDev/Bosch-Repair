@@ -1374,7 +1374,7 @@ p:last-child { margin-bottom: 0; }
 .sidebar-phone-number {
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--color-primary);
+    color: #e30000;
     display: block;
     margin-bottom: 8px;
 }
