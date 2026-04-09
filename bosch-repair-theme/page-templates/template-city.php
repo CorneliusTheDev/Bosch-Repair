@@ -70,7 +70,7 @@ $city_faqs = array(
         <p>Professional <?php echo BRP_BRAND; ?> appliance repair serving <?php echo esc_html( $city_name_only ); ?> and surrounding suburbs. Same-day service available. Factory-certified parts and highly trained technicians.</p>
         <div style="display:flex;gap:16px;margin-top:24px;flex-wrap:wrap;">
             <a href="#schedule" class="btn btn-primary">📅 Schedule in <?php echo esc_html( $city_name_only ); ?></a>
-            <a href="tel:<?php echo BRP_PHONE_RAW; ?>" class="btn btn-secondary" style="border-color:rgba(255,255,255,0.4);color:#e30000;">📞 <?php echo BRP_PHONE; ?></a>
+            <a href="tel:<?php echo BRP_PHONE_RAW; ?>" class="btn btn-secondary" style="background:#fff;border-color:#fff;color:#e30000;">📞 <?php echo BRP_PHONE; ?></a>
         </div>
     </div>
 </section>

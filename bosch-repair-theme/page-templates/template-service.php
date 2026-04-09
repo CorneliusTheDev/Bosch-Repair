@@ -28,7 +28,7 @@ $appliance_name = str_replace( array( 'Bosch ', ' Repair' ), '', $page_title );
         <p>Expert <?php echo esc_html( $page_title ); ?> by factory-trained technicians. Same-day service available. Factory-certified parts. 90-day warranty.</p>
         <div style="display:flex;gap:16px;margin-top:24px;flex-wrap:wrap;">
             <a href="#schedule" class="btn btn-primary">📅 Schedule Repair Now</a>
-            <a href="tel:<?php echo BRP_PHONE_RAW; ?>" class="btn btn-secondary" style="border-color:rgba(255,255,255,0.4);color:#e30000;">📞 <?php echo BRP_PHONE; ?></a>
+            <a href="tel:<?php echo BRP_PHONE_RAW; ?>" class="btn btn-secondary" style="background:#fff;border-color:#fff;color:#e30000;">📞 <?php echo BRP_PHONE; ?></a>
         </div>
     </div>
 </section>
