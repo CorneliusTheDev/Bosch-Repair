@@ -1358,3 +1358,32 @@ add_action( 'init', function() {
 
     flush_rewrite_rules();
 }, 100 );
+
+// ============================================================
+// DIRECT STYLE + SCRIPT FIXES (bypasses all caching)
+// ============================================================
+add_action( 'wp_head', function() {
+    echo '<style id="brp-fixes">
+        /* Phone number red in all white-bg sections */
+        .sidebar-phone-number { color: #e30000 !important; }
+        .page-hero .btn-secondary,
+        .hero .btn-secondary {
+            background: #fff !important;
+            border-color: #fff !important;
+            color: #e30000 !important;
+        }
+    </style>';
+}, 99 );
+
+add_action( 'wp_footer', function() {
+    echo '<script id="brp-fixes-js">
+    document.addEventListener("DOMContentLoaded", function() {
+        /* Hide most-searched placeholder when no real data */
+        document.querySelectorAll(".ec-cat-most").forEach(function(el) {
+            if (el.style.visibility === "hidden" || el.textContent.trim() === "\u2014" || el.textContent.trim() === "-") {
+                el.style.display = "none";
+            }
+        });
+    });
+    </script>';
+}, 99 );
