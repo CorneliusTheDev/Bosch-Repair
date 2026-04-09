@@ -30,6 +30,7 @@ $all_posts = new WP_Query( array(
     'orderby'        => 'date',
     'order'          => 'DESC',
     'post_status'    => 'publish',
+    'post__not_in'   => array( 1 ),
 ) );
 ?>
 
