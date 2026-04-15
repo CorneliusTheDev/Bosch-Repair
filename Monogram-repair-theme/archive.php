@@ -266,7 +266,8 @@ if ( is_post_type_archive( 'error_code' ) ) :
                     <div class="service-card-img-wrap">
                         <img src="<?php echo esc_url( $card_img ); ?>"
                              alt="<?php echo esc_attr( $s['title'] ); ?>"
-                             loading="lazy" width="600" height="300">
+                             loading="lazy" width="600" height="300"
+                             <?php if ( $s['image'] === 'washer.png' ) echo 'class="img-zoom-washer"'; ?>>
                     </div>
                     <div class="service-card-body">
                         <div>
@@ -361,7 +362,7 @@ if ( is_post_type_archive( 'error_code' ) ) :
             $brp_appliance_imgs = array(
                 'dishwasher'   => get_template_directory_uri() . '/assets/images/services/dishwasher.png',
                 'refrigerator' => get_template_directory_uri() . '/assets/images/services/refrigerator.webp',
-                'washer'       => get_template_directory_uri() . '/assets/images/services/washer.jpg',
+                'washer'       => get_template_directory_uri() . '/assets/images/services/washer.png',
                 'dryer'        => get_template_directory_uri() . '/assets/images/services/dryer.png',
                 'oven'         => get_template_directory_uri() . '/assets/images/services/oven.png',
                 'cooktop'      => get_template_directory_uri() . '/assets/images/services/cooktop.png',
@@ -391,7 +392,8 @@ if ( is_post_type_archive( 'error_code' ) ) :
                         <div class="service-card-img-wrap">
                             <img src="<?php echo esc_url( $card_img ); ?>"
                                  alt="<?php echo esc_attr( $clean_title ); ?>"
-                                 loading="lazy" width="600" height="300">
+                                 loading="lazy" width="600" height="300"
+                                 <?php if ( $appliance_type === 'washer' ) echo 'class="img-zoom-washer"'; ?>>
                         </div>
                         <div class="service-card-body">
                             <div>

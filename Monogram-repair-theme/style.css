@@ -837,6 +837,14 @@ p:last-child { margin-bottom: 0; }
     transform: scale(1.07) translateY(-4px);
 }
 
+/* Washer image zoom on service cards (homepage + services page) */
+.service-card-img-wrap img.img-zoom-washer {
+    transform: scale(1.35);
+}
+.service-card:hover .service-card-img-wrap img.img-zoom-washer {
+    transform: scale(1.42) translateY(-4px);
+}
+
 /* Steel shimmer overlay on gradient placeholder */
 .service-card-img-wrap::after {
     content: '';

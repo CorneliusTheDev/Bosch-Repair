@@ -87,7 +87,8 @@ $cities   = brp_get_cities();
                 <div class="service-card-img-wrap">
                     <?php if ( ! empty( $service['image'] ) ) : ?>
                     <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/services/' . $service['image'] ); ?>"
-                         alt="<?php echo esc_attr( $service['title'] ); ?>" loading="lazy">
+                         alt="<?php echo esc_attr( $service['title'] ); ?>" loading="lazy"
+                         <?php if ( $service['image'] === 'washer.png' ) echo 'class="img-zoom-washer"'; ?>>
                     <?php else : ?>
                     <span class="service-card-icon"><?php echo $service['icon']; ?></span>
                     <?php endif; ?>
