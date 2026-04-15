@@ -1080,7 +1080,7 @@ function brp_get_services() {
             'title' => 'Monogram Washer Repair',
             'icon'  => '🫧',
             'desc'  => 'Monogram washer not spinning, draining, or starting? We service all models with same-day availability.',
-            'image' => 'washer.jpg',
+            'image' => 'washer.png',
         ),
     );
 }
