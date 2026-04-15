@@ -839,10 +839,10 @@ p:last-child { margin-bottom: 0; }
 
 /* Washer image zoom on service cards (homepage + services page) */
 .service-card-img-wrap img.img-zoom-washer {
-    transform: scale(1.35);
+    transform: scale(1.65);
 }
 .service-card:hover .service-card-img-wrap img.img-zoom-washer {
-    transform: scale(1.42) translateY(-4px);
+    transform: scale(1.72) translateY(-4px);
 }
 
 /* Steel shimmer overlay on gradient placeholder */
