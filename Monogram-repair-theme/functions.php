@@ -1194,6 +1194,12 @@ function brp_get_faqs_for_appliance( $appliance ) {
             array( 'q' => 'My Monogram wine cooler is vibrating excessively — what causes this?', 'a' => 'Excessive vibration can damage wine sediment and is usually caused by worn compressor mounts, a failing fan motor, or the unit sitting on an uneven surface. We inspect and repair the vibration source.' ),
             array( 'q' => 'Can you repair a Monogram dual-zone wine cooler?', 'a' => 'Yes. Our technicians service all Monogram wine cooler models including dual-zone units. Repairs include thermostat replacement, compressor service, fan motor replacement, and control board diagnostics.' ),
         ),
+        'hood' => array(
+            array( 'q' => 'Why is my Monogram range hood not turning on?', 'a' => 'A hood that won\'t power on is typically caused by a tripped circuit breaker, a failed control board, or a blown fuse in the unit. Our technicians diagnose the electrical circuit and replace the faulty component with genuine Monogram parts.' ),
+            array( 'q' => 'Why is my Monogram hood so loud?', 'a' => 'Excessive noise is usually caused by a worn or unbalanced blower wheel, loose housing panels, or a failing blower motor. We inspect the entire blower assembly and replace worn components to restore quiet operation.' ),
+            array( 'q' => 'My Monogram hood fan runs but suction is weak — what\'s wrong?', 'a' => 'Weak airflow is most often caused by a clogged grease filter, a blocked exhaust duct, or a failing blower motor. We inspect the full ventilation path and restore proper airflow to factory specifications.' ),
+            array( 'q' => 'Can you repair a Monogram hood with a smart/connected control panel?', 'a' => 'Yes. Our technicians service all Monogram hood models including WiFi-connected and app-controlled units. We diagnose control board faults, replace unresponsive panels, and restore smart-home connectivity.' ),
+        ),
         'default' => array(
             array( 'q' => 'Do you use genuine Monogram parts?', 'a' => 'Yes. We use only genuine GE Monogram replacement parts to ensure your appliance performs to factory specifications and your warranty remains intact.' ),
             array( 'q' => 'How quickly can you come out for a Monogram appliance repair?', 'a' => 'We offer same-day and next-day appointments in all our service areas. Call us or use the online booking form and we\'ll have a certified technician at your door within 24 hours.' ),

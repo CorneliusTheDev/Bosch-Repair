@@ -70,8 +70,112 @@ $appliance_name = str_replace( array( 'Monogram ', 'Maytag ', ' Repair' ), '', $
                         <?php the_content(); ?>
                     <?php endwhile; endif; ?>
 
-                    <?php if ( ! get_the_content() ) : ?>
-                    <!-- Default content when no content is set -->
+                    <?php
+                    // Show fallback if post has no real visible content
+                    // (handles empty posts AND Gutenberg-only empty-block markup)
+                    $has_real_content = trim( wp_strip_all_tags( get_the_content() ) ) !== '';
+                    if ( ! $has_real_content ) :
+                    ?>
+
+                    <?php if ( 'wine-cooler' === $appliance_type ) : ?>
+                    <!-- Wine Cooler specific content -->
+                    <h2>Expert <?php echo BRP_BRAND; ?> Wine Cooler Repair</h2>
+                    <p>A <?php echo BRP_BRAND; ?> wine cooler is a precision appliance engineered to maintain exact temperature and humidity conditions that protect your investment. When something goes wrong — whether it's a temperature swing, a vibration issue, or an error code on the display — you need a technician who understands the specific demands of wine storage. Our certified technicians specialize in <?php echo BRP_BRAND; ?> wine cooler repair and carry a full inventory of genuine <?php echo BRP_BRAND; ?> replacement parts for same-day service.</p>
+
+                    <h3>Common <?php echo BRP_BRAND; ?> Wine Cooler Problems We Fix</h3>
+                    <ul class="checklist">
+                        <li>Not cooling or not reaching set temperature</li>
+                        <li>Temperature fluctuating between zones (dual-zone models)</li>
+                        <li>Compressor running but not cooling</li>
+                        <li>Excessive vibration that may disturb wine sediment</li>
+                        <li>Error codes on the control display</li>
+                        <li>Interior light not working</li>
+                        <li>Door seal damaged or not sealing properly</li>
+                        <li>Condensation or frost buildup inside the cabinet</li>
+                        <li>Fan motor making unusual noise</li>
+                        <li>Control panel unresponsive or buttons not working</li>
+                        <li>Unit not turning on</li>
+                        <li>Humidity too high or too low inside the cabinet</li>
+                    </ul>
+
+                    <h3><?php echo BRP_BRAND; ?> Wine Cooler Models We Service</h3>
+                    <p>Our technicians are experienced with the full range of <?php echo BRP_BRAND; ?> undercounter and built-in wine coolers, including:</p>
+                    <ul class="checklist">
+                        <li><?php echo BRP_BRAND; ?> Single-Zone Undercounter Wine Coolers</li>
+                        <li><?php echo BRP_BRAND; ?> Dual-Zone Wine Coolers</li>
+                        <li><?php echo BRP_BRAND; ?> Built-In Column Wine Storage</li>
+                        <li><?php echo BRP_BRAND; ?> Integrated Wine Coolers (panel-ready)</li>
+                    </ul>
+
+                    <h3>Why Precise Temperature Matters</h3>
+                    <p>Wine is sensitive to temperature swings of even a few degrees. Long-term storage requires consistent temperatures — typically 45°F to 65°F depending on the wine type — along with controlled humidity and minimal vibration. A malfunctioning cooler that cycles between temperatures can accelerate aging, push corks, and ruin years of careful cellaring. Don't wait to have the problem assessed.</p>
+
+                    <h3>Our <?php echo BRP_BRAND; ?> Wine Cooler Repair Process</h3>
+                    <ol>
+                        <li><strong>Same-Day Scheduling:</strong> Call or book online — we confirm your appointment within minutes and aim for same-day or next-day arrival.</li>
+                        <li><strong>Expert Diagnosis:</strong> Our technician arrives with diagnostic tools and the most common <?php echo BRP_BRAND; ?> wine cooler parts on the service vehicle.</li>
+                        <li><strong>Upfront Quote:</strong> We explain the fault in plain language and give you a fixed price before any work begins. No hidden fees.</li>
+                        <li><strong>Precision Repair:</strong> We use only genuine, factory-certified <?php echo BRP_BRAND; ?> replacement parts to ensure your cooler performs to original factory specifications.</li>
+                        <li><strong>Temperature Verification:</strong> After completing the repair, we verify that both zones are reaching and holding the correct set temperatures before we leave.</li>
+                        <li><strong>90-Day Warranty:</strong> Your repair is backed by our 90-day labor warranty. If the same fault returns, we come back and fix it at no charge.</li>
+                    </ol>
+
+                    <h3>Why Choose Genuine <?php echo BRP_BRAND; ?> Parts?</h3>
+                    <p>Aftermarket compressors, thermistors, and fan motors may appear to fit but are rarely engineered to the same tolerances as the original <?php echo BRP_BRAND; ?> components. Using non-OEM parts in a wine cooler can lead to temperature inaccuracy, premature failure, and a voided manufacturer warranty. We stock genuine <?php echo BRP_BRAND; ?> parts and use them exclusively on every repair.</p>
+
+                    <div class="notice notice-info">
+                        <strong>💡 Tip:</strong> If your <?php echo BRP_BRAND; ?> wine cooler is displaying an error code, write it down before our technician arrives — it gives us a head start on diagnosis. You can also look up your code in our <a href="<?php echo get_post_type_archive_link( 'error_code' ); ?>"><?php echo BRP_BRAND; ?> Error Code Database</a>.
+                    </div>
+
+                    <?php elseif ( 'hood' === $appliance_type ) : ?>
+                    <!-- Hood / Range Hood specific content -->
+                    <h2>Expert <?php echo BRP_BRAND; ?> Range Hood Repair</h2>
+                    <p>A <?php echo BRP_BRAND; ?> range hood or ventilation hood is a critical part of your kitchen, removing smoke, grease, steam, and odors while protecting your cabinetry and improving air quality. When the blower motor fails, the lighting stops working, or the controls go unresponsive, you need a technician who knows <?php echo BRP_BRAND; ?> ventilation systems inside and out. Our certified technicians carry genuine <?php echo BRP_BRAND; ?> parts and deliver same-day hood repair service.</p>
+
+                    <h3>Common <?php echo BRP_BRAND; ?> Hood Problems We Fix</h3>
+                    <ul class="checklist">
+                        <li>Blower motor not working or running at wrong speed</li>
+                        <li>Hood not turning on at all</li>
+                        <li>Lights not working or flickering</li>
+                        <li>Control panel buttons unresponsive</li>
+                        <li>Excessive noise (rattling, grinding, humming)</li>
+                        <li>Poor suction or weak airflow</li>
+                        <li>Error code displayed on the panel</li>
+                        <li>Fan running but not exhausting properly</li>
+                        <li>Grease filter sensor malfunction</li>
+                        <li>Hood not connecting to smart home system</li>
+                    </ul>
+
+                    <h3><?php echo BRP_BRAND; ?> Hood Models We Service</h3>
+                    <p>We service the full range of <?php echo BRP_BRAND; ?> ventilation products, including:</p>
+                    <ul class="checklist">
+                        <li><?php echo BRP_BRAND; ?> Wall-Mount Chimney Range Hoods</li>
+                        <li><?php echo BRP_BRAND; ?> Island Range Hoods</li>
+                        <li><?php echo BRP_BRAND; ?> Under-Cabinet Range Hoods</li>
+                        <li><?php echo BRP_BRAND; ?> Built-In Downdraft Ventilation Systems</li>
+                        <li><?php echo BRP_BRAND; ?> Integrated Cabinet-Mount Hoods</li>
+                    </ul>
+
+                    <h3>Our <?php echo BRP_BRAND; ?> Hood Repair Process</h3>
+                    <p>Every <?php echo BRP_BRAND; ?> hood repair starts with a thorough diagnostic. Our technician inspects the blower assembly, control board, lighting circuit, and wiring to identify the root cause before quoting a fixed price.</p>
+                    <ol>
+                        <li><strong>Same-Day Scheduling:</strong> Call or book online — we confirm an appointment within minutes.</li>
+                        <li><strong>Expert Diagnosis:</strong> Our technician arrives with diagnostic tools and a complete inventory of common <?php echo BRP_BRAND; ?> hood parts.</li>
+                        <li><strong>Upfront Quote:</strong> We explain the fault clearly and give you a fixed price before any repair work begins.</li>
+                        <li><strong>Fast Repair:</strong> We use only genuine, factory-certified <?php echo BRP_BRAND; ?> replacement parts — blower motors, control boards, LED light assemblies, and more.</li>
+                        <li><strong>Performance Test:</strong> We run the hood at all fan speeds and test the lighting before leaving to confirm the repair is complete.</li>
+                        <li><strong>90-Day Warranty:</strong> Your repair is backed by our 90-day labor warranty for complete peace of mind.</li>
+                    </ol>
+
+                    <h3>Why Genuine <?php echo BRP_BRAND; ?> Parts Matter for Hood Repair</h3>
+                    <p>Range hood blower motors and control boards are engineered to specific airflow and electrical tolerances. Aftermarket components frequently cause noise issues, reduced airflow, or premature failure. We stock genuine OEM <?php echo BRP_BRAND; ?> hood parts to ensure every repair restores your ventilation to factory performance.</p>
+
+                    <div class="notice notice-info">
+                        <strong>💡 Tip:</strong> Clean or replace your <?php echo BRP_BRAND; ?> hood's grease filters every 1–3 months depending on cooking frequency. Clogged filters reduce airflow, strain the blower motor, and can trigger error codes. Our technicians can inspect and replace filters as part of any service visit.
+                    </div>
+
+                    <?php else : ?>
+                    <!-- Default fallback content for all other appliances -->
                     <h2>Professional <?php echo esc_html( $page_title ); ?> Service</h2>
                     <p>When your <?php echo esc_html( $appliance_name ); ?> breaks down, you need a repair service you can trust. Our certified technicians have extensive experience servicing all <?php echo BRP_BRAND; ?> <?php echo esc_html( strtolower( $appliance_name ) ); ?> models — from the latest connected appliances to older units.</p>
 
@@ -111,6 +215,8 @@ $appliance_name = str_replace( array( 'Monogram ', 'Maytag ', ' Repair' ), '', $
                     </div>
 
                     <?php endif; ?>
+
+                    <?php endif; // end ! $has_real_content ?>
                 </div>
 
                 <!-- Cities served -->
