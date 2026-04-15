@@ -359,7 +359,7 @@ if ( is_post_type_archive( 'error_code' ) ) :
 
             // Appliance type → local service image
             $brp_appliance_imgs = array(
-                'dishwasher'   => get_template_directory_uri() . '/assets/images/services/dishwasher.jpeg',
+                'dishwasher'   => get_template_directory_uri() . '/assets/images/services/dishwasher.png',
                 'refrigerator' => get_template_directory_uri() . '/assets/images/services/refrigerator.webp',
                 'washer'       => get_template_directory_uri() . '/assets/images/services/washer.jpg',
                 'dryer'        => get_template_directory_uri() . '/assets/images/services/dryer.png',
@@ -367,8 +367,8 @@ if ( is_post_type_archive( 'error_code' ) ) :
                 'cooktop'      => get_template_directory_uri() . '/assets/images/services/cooktop.png',
                 'microwave'    => get_template_directory_uri() . '/assets/images/services/microwave.png',
                 'freezer'      => get_template_directory_uri() . '/assets/images/services/freezer.png',
-                'wine-cooler'  => get_template_directory_uri() . '/assets/images/services/wine-cooler.jpg',
-                'hood'         => get_template_directory_uri() . '/assets/images/services/hood.jpg',
+                'wine-cooler'  => get_template_directory_uri() . '/assets/images/services/wine-cooler.png',
+                'hood'         => get_template_directory_uri() . '/assets/images/services/hood.png',
             );
             $brp_img_fallback = get_template_directory_uri() . '/assets/images/services/oven.png';
 

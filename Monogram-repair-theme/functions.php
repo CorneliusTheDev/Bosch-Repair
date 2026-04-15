@@ -1052,7 +1052,7 @@ function brp_get_services() {
             'title' => 'Monogram Dishwasher Repair',
             'icon'  => '🍽️',
             'desc'  => 'Monogram dishwasher not draining, leaking, or cleaning? We diagnose and fix it fast.',
-            'image' => 'dishwasher.jpeg',
+            'image' => 'dishwasher.png',
         ),
         array(
             'slug'  => 'monogram-dryer-repair',
@@ -1066,14 +1066,14 @@ function brp_get_services() {
             'title' => 'Monogram Wine Cooler Repair',
             'icon'  => '🍷',
             'desc'  => 'Monogram wine cooler not cooling or showing errors? We restore optimal temperature control.',
-            'image' => 'wine-cooler.jpg',
+            'image' => 'wine-cooler.png',
         ),
         array(
             'slug'  => 'monogram-hood-repair',
             'title' => 'Monogram Hood Repair',
             'icon'  => '💨',
             'desc'  => 'Monogram ventilation hood and range hood repair — blower motors, lighting, controls.',
-            'image' => 'hood.jpg',
+            'image' => 'hood.png',
         ),
         array(
             'slug'  => 'monogram-washer-repair',
