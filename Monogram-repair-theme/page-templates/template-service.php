@@ -19,6 +19,19 @@ $clean_title    = preg_replace( '/^(Monogram|Maytag|GE|LG|Samsung|Whirlpool|Kitc
 
 // Determine appliance keyword from title
 $appliance_name = str_replace( array( 'Monogram ', 'Maytag ', ' Repair' ), '', $page_title );
+
+// Find the service image from brp_get_services() by matching the current post slug
+$current_slug   = get_post_field( 'post_name', get_the_ID() );
+$service_image  = '';
+foreach ( $services as $s ) {
+    if ( $s['slug'] === $current_slug && ! empty( $s['image'] ) ) {
+        $service_image = $s['image'];
+        break;
+    }
+}
+$service_image_url = $service_image
+    ? get_template_directory_uri() . '/assets/images/services/' . $service_image
+    : '';
 ?>
 
 <!-- PAGE HERO -->
@@ -54,6 +67,13 @@ $appliance_name = str_replace( array( 'Monogram ', 'Maytag ', ' Repair' ), '', $
                 <?php if ( has_post_thumbnail() ) : ?>
                 <div class="appliance-image">
                     <?php the_post_thumbnail( 'brp-appliance', array( 'alt' => $page_title ) ); ?>
+                </div>
+                <?php elseif ( $service_image_url ) : ?>
+                <div class="appliance-image">
+                    <img src="<?php echo esc_url( $service_image_url ); ?>"
+                         alt="<?php echo esc_attr( $page_title ); ?>"
+                         loading="lazy"
+                         style="max-width:100%;height:auto;display:block;margin:0 auto 32px;">
                 </div>
                 <?php else : ?>
                 <div class="appliance-image" style="background:var(--color-light);border-radius:var(--border-radius-lg);height:280px;display:flex;align-items:center;justify-content:center;margin-bottom:32px;">
