@@ -8,6 +8,32 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
+// ONE-TIME: Create missing Wine Cooler and Hood service posts
+add_action( 'init', function() {
+    if ( get_option( 'brp_missing_services_created' ) ) return;
+    $missing = array(
+        array( 'title' => 'Monogram Wine Cooler Repair', 'slug' => 'monogram-wine-cooler-repair', 'appliance' => 'wine-cooler' ),
+        array( 'title' => 'Monogram Hood Repair',        'slug' => 'monogram-hood-repair',        'appliance' => 'hood' ),
+    );
+    foreach ( $missing as $s ) {
+        $existing = get_posts( array( 'post_type' => 'service', 'name' => $s['slug'], 'numberposts' => 1, 'post_status' => 'any' ) );
+        if ( $existing ) {
+            wp_update_post( array( 'ID' => $existing[0]->ID, 'post_status' => 'publish' ) );
+            update_post_meta( $existing[0]->ID, '_wp_page_template', 'page-templates/template-service.php' );
+            update_post_meta( $existing[0]->ID, '_brp_appliance_type', $s['appliance'] );
+        } else {
+            $id = wp_insert_post( array( 'post_title' => $s['title'], 'post_name' => $s['slug'], 'post_status' => 'publish', 'post_type' => 'service', 'post_content' => '' ) );
+            if ( $id && ! is_wp_error( $id ) ) {
+                update_post_meta( $id, '_wp_page_template', 'page-templates/template-service.php' );
+                update_post_meta( $id, '_brp_appliance_type', $s['appliance'] );
+                wp_set_post_terms( $id, array( $s['appliance'] ), 'appliance_type' );
+            }
+        }
+    }
+    flush_rewrite_rules();
+    update_option( 'brp_missing_services_created', 1 );
+}, 20 );
+
 // Fix policy pages: replace old domain with maytagappliancesolutions.com
 add_action( 'wp_loaded', function() {
     if ( get_transient( 'brp_domain_fix_done' ) ) return;
