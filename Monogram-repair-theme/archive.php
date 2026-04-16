@@ -273,11 +273,6 @@ if ( is_post_type_archive( 'error_code' ) ) :
 
     <section class="section">
         <div class="container">
-            <div style="max-width:800px;margin:0 auto 48px;">
-                <p style="color:var(--color-gray);">Monogram builds some of the most sophisticated home appliances on the market — professional-grade ranges, column refrigerators, integrated dishwashers, and smart connected cooktops. When one of these appliances needs repair, you need a technician who understands the technology, carries the correct OEM parts, and knows how to restore the appliance to factory performance.</p>
-                <p style="color:var(--color-gray);margin-top:12px;">Our certified technicians specialize exclusively in Monogram appliances. We service all current and legacy Monogram models, from the latest smart-home-connected units to older built-in configurations. Most repairs are completed in a single visit because we arrive with the most common Monogram replacement parts already on our service vehicle. Every repair is backed by our 90-day labor warranty — if the same fault returns, we fix it at no charge.</p>
-                <p style="color:var(--color-gray);margin-top:12px;">Select the appliance you need repaired below to learn more about our service, common problems we fix, and how to schedule a same-day appointment.</p>
-            </div>
             <div class="grid grid-3">
                 <?php foreach ( $services as $s ) :
                     $card_img = get_template_directory_uri() . '/assets/images/services/' . $s['image'];
