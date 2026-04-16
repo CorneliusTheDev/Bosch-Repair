@@ -97,16 +97,18 @@ if ( is_post_type_archive( 'error_code' ) ) :
         <div class="container">
             <?php brp_breadcrumbs(); ?>
             <h1>Monogram Appliance Error Codes</h1>
-            <p>Look up any Monogram error code by selecting your appliance type below.</p>
+            <p>Look up any Monogram error code by selecting your appliance type below. Each code includes a plain-language explanation, common causes, and step-by-step troubleshooting guidance.</p>
         </div>
     </section>
 
     <section class="section">
         <div class="container">
 
-            <div class="section-header text-center">
+            <div class="section-header text-center" style="max-width:800px;margin:0 auto 40px;">
                 <span class="section-label">Browse by Appliance</span>
-                <h2 class="section-title">Error Code Categories</h2>
+                <h2 class="section-title">Monogram Error Code Database</h2>
+                <p style="color:var(--color-gray);margin-top:16px;">Monogram appliances display error codes on their control panels to alert you to a specific fault. These codes help identify the problem quickly — whether it's a sensor failure, a heating issue, a drainage fault, or a control board problem. Use this database to find your code, understand what it means, and learn what steps to take before calling a technician.</p>
+                <p style="color:var(--color-gray);margin-top:12px;">Our database covers error codes for Monogram dishwashers, refrigerators, ranges, wall ovens, cooktops, and speed ovens. Each entry explains the root cause, lists common contributing factors, and provides a clear troubleshooting sequence. If the issue persists after basic troubleshooting, our certified Monogram technicians are available for same-day diagnosis and repair.</p>
             </div>
 
             <div class="brp-topic-filters" id="brpEcFilters">
@@ -250,12 +252,17 @@ if ( is_post_type_archive( 'error_code' ) ) :
         <div class="container">
             <?php brp_breadcrumbs(); ?>
             <h1>Monogram Appliance Repair Services</h1>
-            <p>Professional Monogram appliance repair for every appliance in your home. Factory-certified parts, same-day service, 90-day warranty.</p>
+            <p>Professional Monogram appliance repair for every appliance in your home. Factory-certified parts, same-day service, and a 90-day labor warranty on every repair.</p>
         </div>
     </section>
 
     <section class="section">
         <div class="container">
+            <div style="max-width:800px;margin:0 auto 48px;">
+                <p style="color:var(--color-gray);">Monogram builds some of the most sophisticated home appliances on the market — professional-grade ranges, column refrigerators, integrated dishwashers, and smart connected cooktops. When one of these appliances needs repair, you need a technician who understands the technology, carries the correct OEM parts, and knows how to restore the appliance to factory performance.</p>
+                <p style="color:var(--color-gray);margin-top:12px;">Our certified technicians specialize exclusively in Monogram appliances. We service all current and legacy Monogram models, from the latest smart-home-connected units to older built-in configurations. Most repairs are completed in a single visit because we arrive with the most common Monogram replacement parts already on our service vehicle. Every repair is backed by our 90-day labor warranty — if the same fault returns, we fix it at no charge.</p>
+                <p style="color:var(--color-gray);margin-top:12px;">Select the appliance you need repaired below to learn more about our service, common problems we fix, and how to schedule a same-day appointment.</p>
+            </div>
             <div class="grid grid-3">
                 <?php foreach ( $services as $s ) :
                     $card_img = get_template_directory_uri() . '/assets/images/services/' . $s['image'];
@@ -267,7 +274,7 @@ if ( is_post_type_archive( 'error_code' ) ) :
                         <img src="<?php echo esc_url( $card_img ); ?>"
                              alt="<?php echo esc_attr( $s['title'] ); ?>"
                              loading="lazy" width="600" height="300"
-                             <?php if ( $s['image'] === 'washer.png' ) echo 'class="img-zoom-washer"'; ?>>
+>
                     </div>
                     <div class="service-card-body">
                         <div>
@@ -292,17 +299,18 @@ if ( is_post_type_archive( 'error_code' ) ) :
         <div class="container">
             <?php brp_breadcrumbs(); ?>
             <h1>Monogram Appliance Repair — Service Areas</h1>
-            <p>We provide expert Monogram appliance repair across 6 major U.S. metropolitan areas and their surrounding suburbs.</p>
+            <p>We provide expert Monogram appliance repair across 6 major U.S. metropolitan areas and their surrounding suburbs. Same-day and next-day appointments available.</p>
         </div>
     </section>
 
     <section class="section">
         <div class="container">
 
-            <div class="section-header text-center">
+            <div class="section-header text-center" style="max-width:800px;margin:0 auto 48px;">
                 <span class="section-label">Where We Work</span>
                 <h2 class="section-title">Cities We Service</h2>
-                <p class="section-desc">Same-day and next-day Monogram appliance repair available in all service areas. Select your city for local contact details and coverage information.</p>
+                <p class="section-desc" style="margin-top:16px;">Same-day and next-day Monogram appliance repair available in all service areas. Select your city for local contact details, coverage information, and service availability.</p>
+                <p style="color:var(--color-gray);margin-top:12px;">Our service network covers major metropolitan areas across the United States. Each location is staffed by factory-trained Monogram technicians who are familiar with the specific installation environments common in that region — from high-rise condominiums and townhomes to large single-family residences. We carry a full inventory of OEM Monogram parts on every service vehicle, ensuring that most repairs in your area can be completed on the first visit. Whether you need a refrigerator repaired in a high-rise or a range serviced in a suburban home, our local technicians provide the same level of certified expertise. Click your city below to view local service details, coverage zip codes, and contact information.</p>
             </div>
 
             <div class="city-cards-grid">
@@ -365,7 +373,7 @@ if ( is_post_type_archive( 'error_code' ) ) :
                 'washer'       => get_template_directory_uri() . '/assets/images/services/washer.png',
                 'dryer'        => get_template_directory_uri() . '/assets/images/services/dryer.png',
                 'oven'         => get_template_directory_uri() . '/assets/images/services/oven.png',
-                'cooktop'      => get_template_directory_uri() . '/assets/images/services/cooktop.png',
+                'cooktop'      => get_template_directory_uri() . '/assets/images/services/cooktop.jpg',
                 'microwave'    => get_template_directory_uri() . '/assets/images/services/microwave.png',
                 'freezer'      => get_template_directory_uri() . '/assets/images/services/freezer.png',
                 'wine-cooler'  => get_template_directory_uri() . '/assets/images/services/wine-cooler.png',
@@ -393,7 +401,7 @@ if ( is_post_type_archive( 'error_code' ) ) :
                             <img src="<?php echo esc_url( $card_img ); ?>"
                                  alt="<?php echo esc_attr( $clean_title ); ?>"
                                  loading="lazy" width="600" height="300"
-                                 <?php if ( $appliance_type === 'washer' ) echo 'class="img-zoom-washer"'; ?>>
+>
                         </div>
                         <div class="service-card-body">
                             <div>

@@ -23,6 +23,15 @@ get_header(); ?>
             <p>Monogram Repair Pro was founded with one goal in mind — to provide homeowners with a repair service they can trust. We specialize exclusively in Monogram appliances, which means our technicians know these machines inside and out.</p>
             <p>Over the years, we've completed thousands of successful repairs across 6 major metropolitan areas. Every repair is backed by our 90-day labor warranty because we stand behind our work.</p>
             <p>We are not affiliated with or endorsed by Monogram (GE Appliances Corporation), but we are experts in their products — and that's what matters most to our customers.</p>
+
+            <h3 style="margin-top:32px;margin-bottom:12px;">Our Technicians</h3>
+            <p>Every technician on our team undergoes rigorous factory-level training specific to Monogram appliances. We don't send generalists — we send specialists. Our technicians arrive at your home with a fully stocked service vehicle carrying the most common Monogram replacement parts, so most repairs are completed in a single visit. Continuous education keeps our team up to date on every new Monogram model, from connected smart appliances to built-in column refrigerators and professional ranges.</p>
+
+            <h3 style="margin-top:32px;margin-bottom:12px;">Where We Serve</h3>
+            <p>We currently provide Monogram appliance repair in 6 major U.S. metropolitan areas and their surrounding suburbs. Whether you're in the heart of the city or in a surrounding community, our technicians are available for same-day and next-day service appointments. We understand that a broken refrigerator, dishwasher, or range disrupts your entire household — that's why fast response time is a core part of how we operate.</p>
+
+            <h3 style="margin-top:32px;margin-bottom:12px;">Why Choose a Monogram Specialist?</h3>
+            <p>Monogram appliances are engineered to precise tolerances and require OEM parts to perform as designed. A general appliance technician working from a generic manual cannot deliver the same quality of repair as a technician who works exclusively on these products. We stock genuine, factory-certified Monogram parts and follow manufacturer repair procedures on every job — ensuring your appliance returns to factory performance and your warranty remains intact.</p>
         </div>
         <div style="border-radius:var(--border-radius-lg);overflow:hidden;line-height:0;margin-bottom:80px;">
             <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/kitchen.jpg' ); ?>"
