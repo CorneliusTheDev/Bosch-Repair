@@ -17,6 +17,13 @@ get_header(); ?>
 <section class="section">
     <div class="container">
 
+        <div style="border-radius:var(--border-radius-lg);overflow:hidden;line-height:0;margin-bottom:48px;">
+            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/kitchen.jpg' ); ?>"
+                 alt="Modern kitchen with Monogram appliances"
+                 style="width:100%;height:340px;object-fit:cover;display:block;"
+                 loading="lazy">
+        </div>
+
         <div style="margin-bottom:40px;">
             <span class="section-label">Our Story</span>
             <h2 class="section-title">Built on a Simple Promise: Fix It Right the First Time</h2>
@@ -32,12 +39,6 @@ get_header(); ?>
 
             <h3 style="margin-top:32px;margin-bottom:12px;">Why Choose a Monogram Specialist?</h3>
             <p>Monogram appliances are engineered to precise tolerances and require OEM parts to perform as designed. A general appliance technician working from a generic manual cannot deliver the same quality of repair as a technician who works exclusively on these products. We stock genuine, factory-certified Monogram parts and follow manufacturer repair procedures on every job — ensuring your appliance returns to factory performance and your warranty remains intact.</p>
-        </div>
-        <div style="border-radius:var(--border-radius-lg);overflow:hidden;line-height:0;margin-bottom:80px;">
-            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/kitchen.jpg' ); ?>"
-                 alt="Modern kitchen with Monogram appliances"
-                 style="width:100%;height:340px;object-fit:cover;display:block;"
-                 loading="lazy">
         </div>
 
         <!-- Values -->
