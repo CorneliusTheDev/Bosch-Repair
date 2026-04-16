@@ -221,13 +221,18 @@ if ( is_post_type_archive( 'error_code' ) ) :
     <section class="page-hero">
         <div class="container">
             <?php brp_breadcrumbs(); ?>
-            <h1>Maytag Appliance Recalls</h1>
-            <p>Maytag appliances have been subject to several safety recalls issued in cooperation with the U.S. Consumer Product Safety Commission (CPSC). This page provides a reference to current and historical Maytag recall notices so you can check whether your appliance is affected. If your appliance is listed below, follow the recommended steps immediately.</p>
+            <h1>Monogram Appliance Recalls</h1>
+            <p>Monogram appliances have been subject to safety recalls issued in cooperation with the U.S. Consumer Product Safety Commission (CPSC). This page provides a reference to current and historical Monogram recall notices so you can check whether your appliance is affected. If your appliance is listed below, follow the recommended steps immediately.</p>
         </div>
     </section>
 
     <section class="section">
-        <div class="container">
+        <div class="container" style="max-width:860px;">
+
+            <div class="notice notice-warning" style="margin-bottom:40px;">
+                <strong>⚠️ Safety Notice:</strong> Always verify recall status at <strong>CPSC.gov</strong> for the most current information. If a recall advises you to stop using the appliance, do so immediately and contact the manufacturer to arrange a free remedy.
+            </div>
+
             <?php if ( have_posts() ) : ?>
                 <?php while ( have_posts() ) : the_post(); ?>
                     <div class="recall-card">
@@ -235,7 +240,22 @@ if ( is_post_type_archive( 'error_code' ) ) :
                         <?php the_content(); ?>
                     </div>
                 <?php endwhile; ?>
+            <?php else : ?>
+                <p style="color:var(--color-gray);">No additional recall notices at this time. Visit <a href="https://www.cpsc.gov/Recalls" target="_blank" rel="noopener">CPSC.gov</a> for the complete and up-to-date list of active Monogram recalls.</p>
             <?php endif; ?>
+
+            <div style="border-top:1px solid var(--color-gray-light);padding-top:48px;margin-top:48px;">
+                <h2 style="margin-bottom:16px;">About Monogram Appliance Recalls</h2>
+                <p style="color:var(--color-gray);">A recall is a formal safety action coordinated between the appliance manufacturer and the U.S. Consumer Product Safety Commission. When a defect is identified that poses a risk of fire, injury, or property damage, the manufacturer must notify affected consumers and provide a free remedy — repair, replacement part, or refund. Recalls are legally binding and the manufacturer cannot charge you for the fix.</p>
+                <p style="color:var(--color-gray);margin-top:12px;">Monogram is GE's professional built-in appliance line. Recalls affecting Monogram products have involved gas valve assemblies, door latch mechanisms, water supply lines, and electronic components. If you own a Monogram appliance, it's worth checking your model number against active recall listings at least once a year.</p>
+
+                <h3 style="margin-top:32px;margin-bottom:12px;">How to Check Your Model</h3>
+                <p style="color:var(--color-gray);">Locate the model and serial number label on your appliance — typically found inside the door frame on refrigerators and dishwashers, on the underside or base drawer of cooktops and ranges, and on the inner door frame of wall ovens. Monogram model numbers begin with "Z" (e.g., ZGP, ZDT, ZIS). Compare your model against the recall notices listed here and on CPSC.gov.</p>
+
+                <h3 style="margin-top:32px;margin-bottom:12px;">Your Rights</h3>
+                <p style="color:var(--color-gray);">Recall remedies do not expire. Even if a recall was issued years ago, you can still claim the free repair today. You do not need to be the original owner, and you do not need a receipt. Your model and serial number are sufficient. If you need help determining whether your Monogram appliance is affected or want to schedule a recall repair, call <a href="tel:<?php echo BRP_PHONE_RAW; ?>"><?php echo BRP_PHONE; ?></a> — our certified technicians can verify your recall status and arrange service the same day.</p>
+            </div>
+
         </div>
     </section>
 
