@@ -31,29 +31,12 @@ $cities   = brp_get_cities();
                 </div>
             </div>
 
-            <!-- RIGHT: stats 2x2 grid -->
-            <div class="hero-image-col" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%;max-width:480px;margin-left:120px;">
-
-                <div style="background:linear-gradient(135deg,rgba(255,255,255,0.10) 0%,rgba(255,255,255,0.04) 100%);border:1px solid rgba(255,255,255,0.15);border-top:2px solid var(--color-primary);border-radius:16px;padding:32px 20px 28px;text-align:center;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 8px 32px rgba(0,0,0,0.2);">
-                    <div style="font-size:3.2rem;font-weight:800;color:#fff;line-height:1;margin-bottom:8px;letter-spacing:-0.03em;">15k+</div>
-                    <div style="font-size:0.7rem;font-weight:700;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:0.1em;">Repairs Completed</div>
-                </div>
-
-                <div style="background:linear-gradient(135deg,rgba(255,255,255,0.10) 0%,rgba(255,255,255,0.04) 100%);border:1px solid rgba(255,255,255,0.15);border-top:2px solid var(--color-primary);border-radius:16px;padding:32px 20px 28px;text-align:center;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 8px 32px rgba(0,0,0,0.2);">
-                    <div style="font-size:3.2rem;font-weight:800;color:#fff;line-height:1;margin-bottom:8px;letter-spacing:-0.03em;">6</div>
-                    <div style="font-size:0.7rem;font-weight:700;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:0.1em;">Major Cities</div>
-                </div>
-
-                <div style="background:linear-gradient(135deg,rgba(255,255,255,0.10) 0%,rgba(255,255,255,0.04) 100%);border:1px solid rgba(255,255,255,0.15);border-top:2px solid var(--color-primary);border-radius:16px;padding:32px 20px 28px;text-align:center;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 8px 32px rgba(0,0,0,0.2);">
-                    <div style="font-size:3.2rem;font-weight:800;color:#fff;line-height:1;margin-bottom:8px;letter-spacing:-0.03em;">90<span style="font-size:1.4rem;color:var(--color-primary);font-weight:700;margin-left:3px;">-Day</span></div>
-                    <div style="font-size:0.7rem;font-weight:700;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:0.1em;">Labor Warranty</div>
-                </div>
-
-                <div style="background:linear-gradient(135deg,rgba(255,255,255,0.10) 0%,rgba(255,255,255,0.04) 100%);border:1px solid rgba(255,255,255,0.15);border-top:2px solid var(--color-primary);border-radius:16px;padding:32px 20px 28px;text-align:center;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 8px 32px rgba(0,0,0,0.2);">
-                    <div style="font-size:3.2rem;font-weight:800;color:#fff;line-height:1;margin-bottom:8px;letter-spacing:-0.03em;">4.9<span style="font-size:1.4rem;color:var(--color-primary);font-weight:700;margin-left:3px;">★</span></div>
-                    <div style="font-size:0.7rem;font-weight:700;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:0.1em;">Avg. Rating</div>
-                </div>
-
+            <!-- RIGHT: stats image -->
+            <div class="hero-image-col" style="width:100%;max-width:480px;margin-left:120px;">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-stats.png' ); ?>"
+                     alt="15k+ Repairs Completed, 6 Major Cities, 90-Day Labor Warranty, 4.9 Avg Rating"
+                     style="width:100%;height:auto;border-radius:16px;"
+                     loading="eager">
             </div>
 
         </div>
@@ -88,7 +71,7 @@ $cities   = brp_get_cities();
                     <?php if ( ! empty( $service['image'] ) ) : ?>
                     <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/services/' . $service['image'] ); ?>"
                          alt="<?php echo esc_attr( $service['title'] ); ?>" loading="lazy"
-                         <?php if ( $service['image'] === 'washer.png' ) echo 'class="img-zoom-washer"'; ?>>
+>
                     <?php else : ?>
                     <span class="service-card-icon"><?php echo $service['icon']; ?></span>
                     <?php endif; ?>

@@ -128,7 +128,8 @@ function brp_footer_services_fallback() {
     $services = brp_get_services();
     echo '<ul class="footer-links">';
     foreach ( $services as $s ) {
-        echo '<li><a href="' . home_url( '/services/' . $s['slug'] . '/' ) . '">' . esc_html( $s['title'] ) . '</a></li>';
+        $label = preg_replace( '/^Monogram\s+/i', '', $s['title'] );
+        echo '<li><a href="' . home_url( '/services/' . $s['slug'] . '/' ) . '">' . esc_html( $label ) . '</a></li>';
     }
     echo '</ul>';
 }

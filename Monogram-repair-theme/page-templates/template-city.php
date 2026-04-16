@@ -157,7 +157,6 @@ $city_faqs = array(
                         <li>90-day labor warranty on all repairs</li>
                         <li>Background-checked, uniformed professionals</li>
                         <li>Evening and weekend availability</li>
-                        <li>Hundreds of 5-star reviews from <?php echo esc_html( $city_name_only ); ?> customers</li>
                     </ul>
                 </div>
 
