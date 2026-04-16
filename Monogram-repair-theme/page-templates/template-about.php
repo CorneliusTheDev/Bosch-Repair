@@ -17,20 +17,18 @@ get_header(); ?>
 <section class="section">
     <div class="container">
 
-        <div class="grid grid-2" style="gap:64px;align-items:center;margin-bottom:80px;">
-            <div>
-                <span class="section-label">Our Story</span>
-                <h2 class="section-title">Built on a Simple Promise: Fix It Right the First Time</h2>
-                <p>Monogram Repair Pro was founded with one goal in mind — to provide homeowners with a repair service they can trust. We specialize exclusively in Monogram appliances, which means our technicians know these machines inside and out.</p>
-                <p>Over the years, we've completed thousands of successful repairs across 6 major metropolitan areas. Every repair is backed by our 90-day labor warranty because we stand behind our work.</p>
-                <p>We are not affiliated with or endorsed by Monogram (GE Appliances Corporation), but we are experts in their products — and that's what matters most to our customers.</p>
-            </div>
-            <div style="border-radius:var(--border-radius-lg);overflow:hidden;line-height:0;">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/kitchen.jpg' ); ?>"
-                     alt="Modern kitchen with Monogram appliances"
-                     style="width:1200px;max-width:100%;height:100%;object-fit:cover;display:block;"
-                     loading="lazy">
-            </div>
+        <div style="margin-bottom:40px;">
+            <span class="section-label">Our Story</span>
+            <h2 class="section-title">Built on a Simple Promise: Fix It Right the First Time</h2>
+            <p>Monogram Repair Pro was founded with one goal in mind — to provide homeowners with a repair service they can trust. We specialize exclusively in Monogram appliances, which means our technicians know these machines inside and out.</p>
+            <p>Over the years, we've completed thousands of successful repairs across 6 major metropolitan areas. Every repair is backed by our 90-day labor warranty because we stand behind our work.</p>
+            <p>We are not affiliated with or endorsed by Monogram (GE Appliances Corporation), but we are experts in their products — and that's what matters most to our customers.</p>
+        </div>
+        <div style="border-radius:var(--border-radius-lg);overflow:hidden;line-height:0;margin-bottom:80px;">
+            <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/kitchen.jpg' ); ?>"
+                 alt="Modern kitchen with Monogram appliances"
+                 style="width:100%;height:340px;object-fit:cover;display:block;"
+                 loading="lazy">
         </div>
 
         <!-- Values -->
