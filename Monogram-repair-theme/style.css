@@ -13,11 +13,11 @@ Tags: appliance-repair, monogram, service, seo, conversion
 
 /* Base resets and variables */
 :root {
-    --color-primary: #0057a8;
-    --color-primary-dark: #003d7a;
-    --color-secondary: #1565c0;
-    --color-secondary-light: #1976d2;
-    --color-accent: #5ba3d9;
+    --color-primary: #1976d2;
+    --color-primary-dark: #1565c0;
+    --color-secondary: #1e88e5;
+    --color-secondary-light: #2196f3;
+    --color-accent: #64b5f6;
     --color-white: #ffffff;
     --color-light: #f8f9fa;
     --color-gray: #3d4451;
@@ -316,7 +316,7 @@ p:last-child { margin-bottom: 0; }
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: var(--color-secondary);
+    background: #1565c0;
     box-shadow: 0 2px 20px rgba(0,0,0,0.2);
     height: var(--header-height);
     display: flex;
@@ -505,7 +505,7 @@ p:last-child { margin-bottom: 0; }
         left: 0;
         right: 0;
         bottom: 0;
-        background: var(--color-secondary);
+        background: #1565c0;
         overflow-y: auto;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
@@ -809,40 +809,29 @@ p:last-child { margin-bottom: 0; }
     box-shadow: var(--shadow-md);
 }
 
-/* Image area — shows photo when available, steel gradient when not */
+/* Image area */
 .service-card-img-wrap {
     position: relative;
     width: 100%;
-    height: 160px;
+    height: 200px;
     overflow: hidden;
-    background: linear-gradient(145deg, #1c2e44 0%, #2c4a6e 50%, #3a6491 100%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
     flex-shrink: 0;
 }
 
 .service-card-img-wrap img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: contain;
-    object-position: center bottom;
+    object-fit: cover;
+    object-position: center center;
     display: block;
-    padding: 14px 18px 8px;
     transition: transform 0.4s ease;
-    filter: drop-shadow(0 8px 18px rgba(0,0,0,0.35));
 }
 
 .service-card:hover .service-card-img-wrap img {
-    transform: scale(1.07) translateY(-4px);
-}
-
-/* Washer image zoom on service cards (homepage + services page) */
-.service-card-img-wrap img.img-zoom-washer {
-    transform: scale(1.65);
-}
-.service-card:hover .service-card-img-wrap img.img-zoom-washer {
-    transform: scale(1.72) translateY(-4px);
+    transform: scale(1.07);
 }
 
 /* Steel shimmer overlay on gradient placeholder */
@@ -927,6 +916,7 @@ p:last-child { margin-bottom: 0; }
     gap: 20px;
     align-items: flex-start;
 }
+
 
 .feature-icon {
     width: 48px;
@@ -1476,7 +1466,7 @@ p:last-child { margin-bottom: 0; }
 
 /* Footer */
 .site-footer {
-    background: var(--color-secondary);
+    background: #1565c0;
     color: rgba(255,255,255,0.8);
     padding-top: 72px;
 }
@@ -1715,16 +1705,24 @@ p:last-child { margin-bottom: 0; }
 
 /* Appliance image */
 .appliance-image {
+    position: relative;
     border-radius: var(--border-radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-md);
     margin-bottom: 32px;
+    height: 220px;
+    max-width: 360px;
 }
 
 .appliance-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 300px;
+    height: 100%;
     object-fit: cover;
+    object-position: center center;
+    display: block;
 }
 
 /* Tables */

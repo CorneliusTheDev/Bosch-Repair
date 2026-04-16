@@ -54,6 +54,71 @@ add_action( 'wp_loaded', function() {
     set_transient( 'brp_domain_fix_done', true, YEAR_IN_SECONDS );
 } );
 
+// ONE-TIME: Update policy pages domain to monogramsupportcenter.com
+add_action( 'wp_loaded', function() {
+    if ( get_transient( 'brp_domain_monogram_fix_done' ) ) return;
+    $slugs = array( 'privacy-policy', 'terms-of-use', 'mobile-terms-of-use' );
+    foreach ( $slugs as $slug ) {
+        $page = get_page_by_path( $slug );
+        if ( ! $page ) continue;
+        $content = $page->post_content;
+        $updated = preg_replace(
+            '#https?://(?:[a-z0-9\-]+\.hostingersite\.com|maytagappliancesolutions\.com)#i',
+            'https://monogramsupportcenter.com',
+            $content
+        );
+        if ( $updated !== $content ) {
+            wp_update_post( array( 'ID' => $page->ID, 'post_content' => $updated ) );
+        }
+    }
+    set_transient( 'brp_domain_monogram_fix_done', true, YEAR_IN_SECONDS );
+} );
+
+// ONE-TIME: Update terms-of-use and mobile-terms-of-use email/phone
+add_action( 'wp_loaded', function() {
+    if ( get_transient( 'brp_terms_email_fix_done_v2' ) ) return;
+    $pages = array( 'terms-of-use', 'mobile-terms-of-use' );
+    foreach ( $pages as $slug ) {
+        $page = get_page_by_path( $slug );
+        if ( ! $page ) continue;
+        $content = str_replace(
+            array( 'info@maytagappliancesolutions.com', 'info@boschappliancerepair.com', 'info@boschrepairpro.com' ),
+            'info@monogramsupportcenter.com',
+            $page->post_content
+        );
+        $content = str_replace(
+            array( '800-555-0199', '1-800-555-0199' ),
+            BRP_PHONE,
+            $content
+        );
+        if ( $content !== $page->post_content ) {
+            wp_update_post( array( 'ID' => $page->ID, 'post_content' => $content ) );
+        }
+    }
+    set_transient( 'brp_terms_email_fix_done_v2', true, YEAR_IN_SECONDS );
+} );
+
+// ONE-TIME: Fix mobile-terms Help section — replace service@ email and (800) phone format
+add_action( 'wp_loaded', function() {
+    if ( get_transient( 'brp_mobile_terms_help_fix_v1' ) ) return;
+    $page = get_page_by_path( 'mobile-terms-of-use' );
+    if ( ! $page ) return;
+    $content = str_replace(
+        array( 'service@monogramrepairpro.com', 'service@monogram.com' ),
+        'info@monogramsupportcenter.com',
+        $page->post_content
+    );
+    $content = str_replace(
+        array( '(800) 555-0199', '(800)555-0199', '800-555-0199', '1-800-555-0199' ),
+        BRP_PHONE,
+        $content
+    );
+    if ( $content !== $page->post_content ) {
+        wp_update_post( array( 'ID' => $page->ID, 'post_content' => $content ) );
+    }
+    set_transient( 'brp_mobile_terms_help_fix_v1', true, YEAR_IN_SECONDS );
+} );
+
 // Auto-setup: create all pages/posts if they don't exist yet
 add_action( 'wp_loaded', function() {
     if ( get_transient( 'brp_auto_setup_done' ) ) return;
@@ -64,6 +129,13 @@ add_action( 'wp_loaded', function() {
     define( 'BRP_AUTO_SETUP', true );
     include get_template_directory() . '/inc/setup-pages.php';
     set_transient( 'brp_auto_setup_done', true, YEAR_IN_SECONDS );
+} );
+
+// Auto-populate error codes v2 (adds missed + new codes to reach 12 per appliance)
+add_action( 'wp_loaded', function() {
+    if ( get_transient( 'brp_error_codes_v2_done' ) ) return;
+    include get_template_directory() . '/inc/create-error-codes-v2.php';
+    set_transient( 'brp_error_codes_v2_done', true, YEAR_IN_SECONDS );
 } );
 
 // Auto-populate error codes once
@@ -94,13 +166,31 @@ add_action( 'wp_loaded', function() {
     set_transient( 'brp_error_codes_done', true, YEAR_IN_SECONDS );
 } );
 
+// ONE-TIME: Remove "Suggested text" placeholders from privacy policy page
+add_action( 'wp_loaded', function() {
+    if ( get_transient( 'brp_privacy_suggested_text_removed' ) ) return;
+    $page = get_page_by_path( 'privacy-policy' );
+    if ( ! $page ) return;
+    $content = $page->post_content;
+    // Remove "[Suggested text: ...]" blocks and bare "Suggested text:" labels
+    $patterns = array(
+        '/\[Suggested text:[^\]]*\]/i',  // bracketed form: [Suggested text: ...]
+        '/Suggested text:\s*/i',          // bare label: Suggested text:
+    );
+    $cleaned = preg_replace( $patterns, '', $content );
+    if ( $cleaned !== $content ) {
+        wp_update_post( array( 'ID' => $page->ID, 'post_content' => $cleaned ) );
+    }
+    set_transient( 'brp_privacy_suggested_text_removed', true, YEAR_IN_SECONDS );
+} );
+
 define( 'BRP_VERSION', '1.0.7' );
 define( 'BRP_DIR', get_template_directory() );
 define( 'BRP_URI', get_template_directory_uri() );
 define( 'BRP_PHONE', '844-752-7887' );
 define( 'BRP_PHONE_RAW', '8447527887' );
-define( 'BRP_EMAIL', 'info@maytagappliancesolutions.com' );
-define( 'BRP_SITE_URL', 'https://maytagappliancesolutions.com' );
+define( 'BRP_EMAIL', 'info@monogramsupportcenter.com' );
+define( 'BRP_SITE_URL', 'https://monogramsupportcenter.com' );
 define( 'BRP_BRAND', 'Monogram' );
 
 // ============================================================
@@ -1043,70 +1133,70 @@ function brp_get_services() {
             'title' => 'Monogram Oven Repair',
             'icon'  => '🔲',
             'desc'  => 'Single and double Monogram wall oven repair — heating elements, sensors, control boards.',
-            'image' => 'oven.png',
+            'image' => 'oven.webp',
         ),
         array(
             'slug'  => 'monogram-microwave-repair',
             'title' => 'Monogram Microwave Repair',
             'icon'  => '📡',
             'desc'  => 'Monogram microwave not heating or displaying errors? We diagnose and fix it fast.',
-            'image' => 'microwave.png',
+            'image' => 'microwave.jfif',
         ),
         array(
             'slug'  => 'monogram-freezer-repair',
             'title' => 'Monogram Freezer Repair',
             'icon'  => '❄️',
             'desc'  => 'Monogram upright and undercounter freezer repair — not freezing, frost buildup, and more.',
-            'image' => 'freezer.png',
+            'image' => 'freezer.webp',
         ),
         array(
             'slug'  => 'monogram-cooktop-repair',
             'title' => 'Monogram Cooktop Repair',
             'icon'  => '♨️',
             'desc'  => 'Gas and induction Monogram cooktop repair — burners, igniters, touch controls.',
-            'image' => 'cooktop.png',
+            'image' => 'cooktop.jpg',
         ),
         array(
             'slug'  => 'monogram-refrigerator-repair',
             'title' => 'Monogram Refrigerator Repair',
             'icon'  => '🧊',
             'desc'  => 'Built-in column and French door Monogram refrigerator repair — cooling, ice maker, water dispenser.',
-            'image' => 'refrigerator.webp',
+            'image' => 'refrigerator.jpg',
         ),
         array(
             'slug'  => 'monogram-dishwasher-repair',
             'title' => 'Monogram Dishwasher Repair',
             'icon'  => '🍽️',
             'desc'  => 'Monogram dishwasher not draining, leaking, or cleaning? We diagnose and fix it fast.',
-            'image' => 'dishwasher.png',
+            'image' => 'dishwasher.jpg',
         ),
         array(
             'slug'  => 'monogram-dryer-repair',
             'title' => 'Monogram Dryer Repair',
             'icon'  => '🌀',
             'desc'  => 'Monogram dryer not heating or tumbling? We service all models with same-day availability.',
-            'image' => 'dryer.png',
+            'image' => 'dryer.jpg',
         ),
         array(
             'slug'  => 'monogram-wine-cooler-repair',
             'title' => 'Monogram Wine Cooler Repair',
             'icon'  => '🍷',
             'desc'  => 'Monogram wine cooler not cooling or showing errors? We restore optimal temperature control.',
-            'image' => 'wine-cooler.png',
+            'image' => 'wine-cooler.jpg',
         ),
         array(
             'slug'  => 'monogram-hood-repair',
             'title' => 'Monogram Hood Repair',
             'icon'  => '💨',
             'desc'  => 'Monogram ventilation hood and range hood repair — blower motors, lighting, controls.',
-            'image' => 'hood.png',
+            'image' => 'hood.jpg',
         ),
         array(
             'slug'  => 'monogram-washer-repair',
             'title' => 'Monogram Washer Repair',
             'icon'  => '🫧',
             'desc'  => 'Monogram washer not spinning, draining, or starting? We service all models with same-day availability.',
-            'image' => 'washer.png',
+            'image' => 'washer.jpg',
         ),
     );
 }
@@ -1605,3 +1695,24 @@ add_action( 'wp_footer', function() {
     });
     </script>';
 }, 99 );
+
+// Replace Automattic privacy policy URL in comments form with site-specific URL
+add_filter( 'wp_get_privacy_policy_url', function( $url ) {
+    return 'https://monogramsupportcenter.com';
+} );
+
+add_filter( 'comment_form_default_fields', function( $fields ) {
+    if ( isset( $fields['cookies'] ) ) {
+        $fields['cookies'] = str_replace( 'https://automattic.com/privacy/', 'https://monogramsupportcenter.com', $fields['cookies'] );
+    }
+    return $fields;
+} );
+
+add_filter( 'comment_form_defaults', function( $defaults ) {
+    foreach ( array( 'comment_notes_before', 'comment_notes_after' ) as $key ) {
+        if ( ! empty( $defaults[ $key ] ) ) {
+            $defaults[ $key ] = str_replace( 'https://automattic.com/privacy/', 'https://monogramsupportcenter.com', $defaults[ $key ] );
+        }
+    }
+    return $defaults;
+} );

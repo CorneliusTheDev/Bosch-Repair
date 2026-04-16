@@ -72,8 +72,7 @@ $service_image_url = $service_image
                 <div class="appliance-image">
                     <img src="<?php echo esc_url( $service_image_url ); ?>"
                          alt="<?php echo esc_attr( $page_title ); ?>"
-                         loading="lazy"
-                         style="max-width:100%;height:auto;display:block;margin:0 auto 32px;">
+                         loading="lazy">
                 </div>
                 <?php else : ?>
                 <div class="appliance-image" style="background:var(--color-light);border-radius:var(--border-radius-lg);height:280px;display:flex;align-items:center;justify-content:center;margin-bottom:32px;">
@@ -207,11 +206,17 @@ $service_image_url = $service_image
                         <li>Unusual noises (grinding, squeaking, banging)</li>
                         <li>Error code displayed on control panel</li>
                         <li>Leaking water</li>
+                        <?php if ( $appliance_type === 'refrigerator' ) : ?>
+                        <li>Not cooling properly</li>
+                        <?php else : ?>
                         <li>Not heating or cooling properly</li>
+                        <?php endif; ?>
                         <li>Control panel unresponsive</li>
                         <li>Door not sealing or closing correctly</li>
                         <li>Excessive vibration or movement</li>
+                        <?php if ( $appliance_type !== 'refrigerator' ) : ?>
                         <li>Cycle not completing</li>
+                        <?php endif; ?>
                         <li>Unusual odors during operation</li>
                     </ul>
 

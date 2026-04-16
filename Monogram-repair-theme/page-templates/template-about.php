@@ -25,25 +25,11 @@ get_header(); ?>
                 <p>Over the years, we've completed thousands of successful repairs across 6 major metropolitan areas. Every repair is backed by our 90-day labor warranty because we stand behind our work.</p>
                 <p>We are not affiliated with or endorsed by Monogram (GE Appliances Corporation), but we are experts in their products — and that's what matters most to our customers.</p>
             </div>
-            <div style="background:var(--color-light);border-radius:var(--border-radius-lg);padding:40px;">
-                <div class="grid grid-2" style="gap:24px;">
-                    <div style="text-align:center;padding:24px;background:white;border-radius:var(--border-radius);box-shadow:var(--shadow);">
-                        <div style="font-size:2.5rem;font-weight:800;color:var(--color-primary);">15k+</div>
-                        <div style="font-size:0.85rem;color:var(--color-gray);margin-top:4px;">Repairs Completed</div>
-                    </div>
-                    <div style="text-align:center;padding:24px;background:white;border-radius:var(--border-radius);box-shadow:var(--shadow);">
-                        <div style="font-size:2.5rem;font-weight:800;color:var(--color-primary);">6</div>
-                        <div style="font-size:0.85rem;color:var(--color-gray);margin-top:4px;">Major Cities</div>
-                    </div>
-                    <div style="text-align:center;padding:24px;background:white;border-radius:var(--border-radius);box-shadow:var(--shadow);">
-                        <div style="font-size:2.5rem;font-weight:800;color:var(--color-primary);">4.9★</div>
-                        <div style="font-size:0.85rem;color:var(--color-gray);margin-top:4px;">Average Rating</div>
-                    </div>
-                    <div style="text-align:center;padding:24px;background:white;border-radius:var(--border-radius);box-shadow:var(--shadow);">
-                        <div style="font-size:2.5rem;font-weight:800;color:var(--color-primary);">90-day</div>
-                        <div style="font-size:0.85rem;color:var(--color-gray);margin-top:4px;">Labor Warranty</div>
-                    </div>
-                </div>
+            <div style="border-radius:var(--border-radius-lg);overflow:hidden;line-height:0;">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/kitchen.jpg' ); ?>"
+                     alt="Modern kitchen with Monogram appliances"
+                     style="width:1200px;max-width:100%;height:100%;object-fit:cover;display:block;"
+                     loading="lazy">
             </div>
         </div>
 
@@ -53,19 +39,19 @@ get_header(); ?>
             <h2 class="section-title">What Sets Us Apart</h2>
         </div>
         <div class="grid grid-3" style="margin-bottom:80px;">
-            <div class="feature-item" style="flex-direction:column;text-align:center;padding:32px;background:var(--color-light);border-radius:var(--border-radius-lg);">
+            <div class="feature-item" style="flex-direction:column;align-items:stretch;text-align:center;padding:32px;background:var(--color-light);border-radius:var(--border-radius-lg);">
                 <div class="feature-icon" style="margin:0 auto 16px;">🔧</div>
-                <h4>Factory-Certified Parts</h4>
+                <h4 style="text-align:center;">Factory-Certified Parts</h4>
                 <p style="color:var(--color-gray);margin:0;">We use only genuine, factory-certified Monogram replacement parts. No aftermarket shortcuts that compromise your appliance's performance.</p>
             </div>
-            <div class="feature-item" style="flex-direction:column;text-align:center;padding:32px;background:var(--color-light);border-radius:var(--border-radius-lg);">
+            <div class="feature-item" style="flex-direction:column;align-items:stretch;text-align:center;padding:32px;background:var(--color-light);border-radius:var(--border-radius-lg);">
                 <div class="feature-icon" style="margin:0 auto 16px;">🎓</div>
-                <h4>Highly Trained Technicians</h4>
+                <h4 style="text-align:center;">Highly Trained Technicians</h4>
                 <p style="color:var(--color-gray);margin:0;">Our technicians are factory-trained professionals with continuous education on new Monogram models, technologies, and repair procedures.</p>
             </div>
-            <div class="feature-item" style="flex-direction:column;text-align:center;padding:32px;background:var(--color-light);border-radius:var(--border-radius-lg);">
+            <div class="feature-item" style="flex-direction:column;align-items:stretch;text-align:center;padding:32px;background:var(--color-light);border-radius:var(--border-radius-lg);">
                 <div class="feature-icon" style="margin:0 auto 16px;">🛡️</div>
-                <h4>Honest & Transparent</h4>
+                <h4 style="text-align:center;">Honest & Transparent</h4>
                 <p style="color:var(--color-gray);margin:0;">We provide upfront quotes before any work begins. No surprise fees. If we can't fix it, you don't pay a repair charge.</p>
             </div>
         </div>
