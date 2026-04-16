@@ -8,88 +8,65 @@ get_header();
 
 if ( is_post_type_archive( 'error_code' ) ) :
 
-    $categories = array(
-        array( 'slug' => 'dishwasher',   'label' => 'Dishwashers',         'icon' => '🍽️' ),
-        array( 'slug' => 'refrigerator', 'label' => 'Refrigerators',       'icon' => '🧊' ),
-        array( 'slug' => 'range',        'label' => 'Ranges & Ovens',      'icon' => '🍳' ),
-        array( 'slug' => 'wall-oven',    'label' => 'Wall Ovens',          'icon' => '🔲' ),
-        array( 'slug' => 'cooktop',      'label' => 'Cooktops',            'icon' => '♨️' ),
-        array( 'slug' => 'speed-oven',   'label' => 'Speed Ovens',         'icon' => '⚡' ),
+    // Category display config — icon + label per appliance slug
+    $cat_config = array(
+        'dishwasher'   => array( 'label' => 'Dishwashers',    'icon' => '🍽️' ),
+        'washer'       => array( 'label' => 'Washers',        'icon' => '🫧' ),
+        'dryer'        => array( 'label' => 'Dryers',         'icon' => '🌀' ),
+        'refrigerator' => array( 'label' => 'Refrigerators',  'icon' => '🧊' ),
+        'oven'         => array( 'label' => 'Ovens & Ranges', 'icon' => '🍳' ),
+        'cooktop'      => array( 'label' => 'Cooktops',       'icon' => '♨️' ),
+        'range'        => array( 'label' => 'Ranges',         'icon' => '🍳' ),
+        'wall-oven'    => array( 'label' => 'Wall Ovens',     'icon' => '🔲' ),
+        'speed-oven'   => array( 'label' => 'Speed Ovens',    'icon' => '⚡' ),
     );
 
-    $all_error_codes = array(
-        'dishwasher' => array(
-            array( 'code' => 'C1',  'title' => 'Water Not Filling / No Water Inlet' ),
-            array( 'code' => 'C2',  'title' => 'Drain Problem / Not Draining' ),
-            array( 'code' => 'C3',  'title' => 'Water Not Heating / Heater Fault' ),
-            array( 'code' => 'C4',  'title' => 'Water Level Sensor Error' ),
-            array( 'code' => 'C5',  'title' => 'Door Latch / Door Switch Fault' ),
-            array( 'code' => 'C6',  'title' => 'Water Temperature Too High' ),
-            array( 'code' => 'C7',  'title' => 'Turbidity / Soil Sensor Fault' ),
-            array( 'code' => 'C8',  'title' => 'Leak Detected / Flood Protection Active' ),
-        ),
-        'refrigerator' => array(
-            array( 'code' => 'PO',   'title' => 'Power Outage – Food Safety Alert' ),
-            array( 'code' => 'dE',   'title' => 'Defrost System Failure' ),
-            array( 'code' => 'FF',   'title' => 'Freezer Fan Motor Fault' ),
-            array( 'code' => 'CF',   'title' => 'Condenser Fan Motor Fault' ),
-            array( 'code' => 'CE',   'title' => 'Communication Error (Control Boards)' ),
-            array( 'code' => 'HrS',  'title' => 'Fresh Food Section High Temperature Alarm' ),
-            array( 'code' => 'HrF',  'title' => 'Freezer Section High Temperature Alarm' ),
-            array( 'code' => 'IC',   'title' => 'Ice Maker Fault' ),
-            array( 'code' => 'OP',   'title' => 'Open Probe / Temperature Sensor Open' ),
-            array( 'code' => 'SP',   'title' => 'Short Probe / Temperature Sensor Short' ),
-            array( 'code' => 'Sb',   'title' => 'Sabbath Mode Active' ),
-        ),
-        'range' => array(
-            array( 'code' => 'F0',  'title' => 'Stuck Touch Pad / Key Shorted' ),
-            array( 'code' => 'F1',  'title' => 'Control Board Failure / Runaway Temperature' ),
-            array( 'code' => 'F2',  'title' => 'Oven Temperature Exceeded Maximum Limit' ),
-            array( 'code' => 'F3',  'title' => 'Oven Temperature Sensor Open Circuit' ),
-            array( 'code' => 'F4',  'title' => 'Oven Temperature Sensor Short Circuit' ),
-            array( 'code' => 'F5',  'title' => 'Door Latch Switch Fault (Self-Clean Lock)' ),
-            array( 'code' => 'F6',  'title' => 'Door Unlock Failure After Self-Clean' ),
-            array( 'code' => 'F7',  'title' => 'Control Board Internal Error' ),
-            array( 'code' => 'F8',  'title' => 'Bake Element Relay Fault' ),
-            array( 'code' => 'F9',  'title' => 'Door Lock Relay Fault' ),
-            array( 'code' => 'F10', 'title' => 'Temperature Sensor Runaway' ),
-            array( 'code' => 'F13', 'title' => 'Convection Sensor Open Circuit' ),
-            array( 'code' => 'F14', 'title' => 'Convection Sensor Short Circuit' ),
-            array( 'code' => 'F97', 'title' => 'Cooling Fan Not Running' ),
-            array( 'code' => 'F98', 'title' => 'Door Latch Assembly Fault' ),
-        ),
-        'wall-oven' => array(
-            array( 'code' => 'F0',  'title' => 'Stuck Touch Pad / Shorted Key' ),
-            array( 'code' => 'F1',  'title' => 'Control Board Failure / Runaway Temperature' ),
-            array( 'code' => 'F2',  'title' => 'Oven Temperature Exceeded Safe Limit' ),
-            array( 'code' => 'F3',  'title' => 'Oven Temperature Sensor Open Circuit' ),
-            array( 'code' => 'F4',  'title' => 'Oven Temperature Sensor Short Circuit' ),
-            array( 'code' => 'F5',  'title' => 'Door Latch Failure (Self-Clean Mode)' ),
-            array( 'code' => 'F6',  'title' => 'Door Unlock Failure' ),
-            array( 'code' => 'F8',  'title' => 'Bake Element Relay Fault' ),
-            array( 'code' => 'F9',  'title' => 'Door Lock Relay Fault' ),
-            array( 'code' => 'F13', 'title' => 'Convection Sensor Open Circuit' ),
-            array( 'code' => 'F14', 'title' => 'Convection Sensor Short Circuit' ),
-            array( 'code' => 'F97', 'title' => 'Cooling Fan Not Detected' ),
-        ),
-        'cooktop' => array(
-            array( 'code' => 'F0',  'title' => 'Control Lock Active (Child Lock)' ),
-            array( 'code' => 'F2',  'title' => 'Surface Element Overheating' ),
-            array( 'code' => 'F3',  'title' => 'Surface Temperature Sensor Open Circuit' ),
-            array( 'code' => 'F4',  'title' => 'Surface Temperature Sensor Short Circuit' ),
-            array( 'code' => 'F5',  'title' => 'Control Board Failure' ),
-            array( 'code' => 'F9',  'title' => 'Communication Error' ),
-        ),
-        'speed-oven' => array(
-            array( 'code' => 'F1',  'title' => 'Control Board Fault' ),
-            array( 'code' => 'F2',  'title' => 'Temperature Sensor Fault' ),
-            array( 'code' => 'F3',  'title' => 'Door Switch / Interlock Failure' ),
-            array( 'code' => 'F4',  'title' => 'Convection Fan Motor Fault' ),
-            array( 'code' => 'F5',  'title' => 'Control Board Internal Failure' ),
-            array( 'code' => 'F7',  'title' => 'Keypad / Touch Panel Fault' ),
-            array( 'code' => 'F9',  'title' => 'Cooling Fan Fault' ),
-        ),
-    );
+    // Query ALL published error codes from DB, grouped by appliance_type term
+    $ec_query = new WP_Query( array(
+        'post_type'      => 'error_code',
+        'post_status'    => 'publish',
+        'posts_per_page' => -1,
+        'orderby'        => 'meta_value',
+        'meta_key'       => '_brp_error_code',
+        'order'          => 'ASC',
+    ) );
+
+    // Build grouped array and collect used categories
+    $all_error_codes = array();
+    $used_slugs      = array();
+
+    if ( $ec_query->have_posts() ) {
+        while ( $ec_query->have_posts() ) {
+            $ec_query->the_post();
+            $terms = wp_get_post_terms( get_the_ID(), 'appliance_type' );
+            if ( empty( $terms ) || is_wp_error( $terms ) ) continue;
+            $term_slug = $terms[0]->slug;
+            $code_val  = get_post_meta( get_the_ID(), '_brp_error_code', true ) ?: get_the_title();
+            $all_error_codes[ $term_slug ][] = array(
+                'code'  => $code_val,
+                'title' => get_the_title(),
+                'slug'  => $term_slug,
+                'url'   => get_permalink(),
+            );
+            $used_slugs[ $term_slug ] = true;
+        }
+        wp_reset_postdata();
+    }
+
+    // Build $categories only from terms that have posts
+    $categories = array();
+    foreach ( $cat_config as $slug => $cfg ) {
+        if ( isset( $used_slugs[ $slug ] ) ) {
+            $categories[] = array( 'slug' => $slug, 'label' => $cfg['label'], 'icon' => $cfg['icon'] );
+        }
+    }
+    // Also add any DB terms not in cat_config
+    foreach ( $used_slugs as $slug => $_ ) {
+        if ( ! isset( $cat_config[ $slug ] ) ) {
+            $term = get_term_by( 'slug', $slug, 'appliance_type' );
+            $categories[] = array( 'slug' => $slug, 'label' => $term ? $term->name : ucfirst( $slug ), 'icon' => '🔧' );
+        }
+    }
 
     ?>
 
@@ -128,7 +105,7 @@ if ( is_post_type_archive( 'error_code' ) ) :
             <div id="brpEcGrid" style="display:flex;flex-direction:column;gap:10px;">
                 <?php foreach ( $all_error_codes as $appliance_slug => $codes ) :
                     $appliance_label = $appliance_slug;
-                    $appliance_icon  = '';
+                    $appliance_icon  = '🔧';
                     foreach ( $categories as $cat ) {
                         if ( $cat['slug'] === $appliance_slug ) {
                             $appliance_label = $cat['label'];
@@ -136,12 +113,9 @@ if ( is_post_type_archive( 'error_code' ) ) :
                             break;
                         }
                     }
-                    $appliance_page_url = home_url( '/error-codes/' . $appliance_slug . '/' );
                     foreach ( $codes as $ec ) :
-                        $code_slug  = strtolower( str_replace( ' ', '', $ec['code'] ) );
-                        $detail_url = add_query_arg( 'code', $code_slug, $appliance_page_url );
                 ?>
-                <a href="<?php echo esc_url( $detail_url ); ?>"
+                <a href="<?php echo esc_url( $ec['url'] ); ?>"
                    class="error-card"
                    data-appliance="<?php echo esc_attr( $appliance_slug ); ?>">
                     <span class="error-code-badge"><?php echo esc_html( $ec['code'] ); ?></span>
