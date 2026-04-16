@@ -816,15 +816,16 @@ p:last-child { margin-bottom: 0; }
     height: 200px;
     overflow: hidden;
     flex-shrink: 0;
+    background: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .service-card-img-wrap img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center center;
     display: block;
     transition: transform 0.4s ease;
@@ -832,15 +833,6 @@ p:last-child { margin-bottom: 0; }
 
 .service-card:hover .service-card-img-wrap img {
     transform: scale(1.07);
-}
-
-/* Steel shimmer overlay on gradient placeholder */
-.service-card-img-wrap::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, transparent 55%, rgba(10, 20, 40, 0.45) 100%);
-    pointer-events: none;
 }
 
 .service-card-icon {
@@ -1705,22 +1697,22 @@ p:last-child { margin-bottom: 0; }
 
 /* Appliance image */
 .appliance-image {
-    position: relative;
     border-radius: var(--border-radius-lg);
     overflow: hidden;
     box-shadow: var(--shadow-md);
     margin: 0 auto 32px;
     height: 220px;
     max-width: 360px;
+    background: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .appliance-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     object-position: center center;
     display: block;
 }
