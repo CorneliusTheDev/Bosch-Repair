@@ -138,18 +138,18 @@ add_action( 'wp_loaded', function() {
     set_transient( 'brp_error_codes_v2_reset_done', true, YEAR_IN_SECONDS );
 } );
 
-// ONE-TIME: Force re-run v2 file (was committed after first reset ran)
-add_action( 'wp_loaded', function() {
-    if ( get_transient( 'brp_error_codes_v2_reset2_done' ) ) return;
-    delete_transient( 'brp_error_codes_v2_done' );
-    set_transient( 'brp_error_codes_v2_reset2_done', true, YEAR_IN_SECONDS );
-} );
-
 // Auto-populate error codes v2 (adds missed + new codes to reach 12 per appliance)
 add_action( 'wp_loaded', function() {
     if ( get_transient( 'brp_error_codes_v2_done' ) ) return;
     include get_template_directory() . '/inc/create-error-codes-v2.php';
     set_transient( 'brp_error_codes_v2_done', true, YEAR_IN_SECONDS );
+} );
+
+// Auto-populate error codes v3 (microwave 14 codes, freezer 12 codes)
+add_action( 'wp_loaded', function() {
+    if ( get_transient( 'brp_error_codes_v3_done' ) ) return;
+    include get_template_directory() . '/inc/create-error-codes-v3.php';
+    set_transient( 'brp_error_codes_v3_done', true, YEAR_IN_SECONDS );
 } );
 
 // Auto-populate error codes once
