@@ -13,11 +13,11 @@ Tags: appliance-repair, monogram, service, seo, conversion
 
 /* Base resets and variables */
 :root {
-    --color-primary: #2196f3;
-    --color-primary-dark: #1976d2;
-    --color-secondary: #42a5f5;
-    --color-secondary-light: #64b5f6;
-    --color-accent: #90caf9;
+    --color-primary: #1976d2;
+    --color-primary-dark: #1565c0;
+    --color-secondary: #1e88e5;
+    --color-secondary-light: #2196f3;
+    --color-accent: #64b5f6;
     --color-white: #ffffff;
     --color-light: #f8f9fa;
     --color-gray: #3d4451;
@@ -546,7 +546,7 @@ p:last-child { margin-bottom: 0; }
 
 /* Hero */
 .hero {
-    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 60%, #1976d2 100%);
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-light) 60%, #1e3a5f 100%);
     color: var(--color-white);
     padding: 100px 0 80px;
     position: relative;
@@ -1762,8 +1762,8 @@ p:last-child { margin-bottom: 0; }
 
 .notice-info {
     background: #e8f4fd;
-    border-color: #64b5f6;
-    color: #1976d2;
+    border-color: #2196f3;
+    color: #1565c0;
 }
 
 .notice-warning {
