@@ -131,6 +131,13 @@ add_action( 'wp_loaded', function() {
     set_transient( 'brp_auto_setup_done', true, YEAR_IN_SECONDS );
 } );
 
+// ONE-TIME: Reset v2 transient so the fixed file can run
+add_action( 'wp_loaded', function() {
+    if ( get_transient( 'brp_error_codes_v2_reset_done' ) ) return;
+    delete_transient( 'brp_error_codes_v2_done' );
+    set_transient( 'brp_error_codes_v2_reset_done', true, YEAR_IN_SECONDS );
+} );
+
 // Auto-populate error codes v2 (adds missed + new codes to reach 12 per appliance)
 add_action( 'wp_loaded', function() {
     if ( get_transient( 'brp_error_codes_v2_done' ) ) return;
