@@ -163,6 +163,27 @@ if ( is_post_type_archive( 'error_code' ) ) :
                 </button>
             </div>
 
+            <!-- SEO content block -->
+            <div style="max-width:800px;margin:64px auto 0;border-top:1px solid var(--color-gray-light);padding-top:48px;">
+                <h2 style="margin-bottom:16px;">How to Use Monogram Error Codes</h2>
+                <p style="color:var(--color-gray);">When a Monogram appliance detects a fault, it interrupts the current operation and displays an alphanumeric code on the control panel. This code is a direct signal from the appliance's internal diagnostics — it tells you which component or circuit has triggered the fault condition. Understanding what the code means is the first step toward resolving the issue, either through basic user troubleshooting or by calling a certified repair technician.</p>
+                <p style="color:var(--color-gray);margin-top:12px;">To use this database: note the exact code shown on your appliance display, select your appliance category using the filter buttons above, and click the matching error code entry. Each page explains the fault in plain language, lists the most common root causes, and walks you through a logical troubleshooting sequence — starting with the simplest checks you can do yourself before escalating to a service call.</p>
+
+                <h3 style="margin-top:32px;margin-bottom:12px;">When to Call a Professional</h3>
+                <p style="color:var(--color-gray);">Some Monogram error codes can be cleared with a simple power reset or a basic fix — a clogged filter, a partially closed water valve, or a door that wasn't fully latched. Other codes indicate hardware failures that require component replacement by a trained technician: a burned-out heating element, a failed control board, a seized fan motor, or a refrigerant leak. If basic troubleshooting does not clear the code, or if the code returns after a short time, do not delay. Continued operation with an active fault can cause secondary damage to other components and increase the total cost of repair.</p>
+                <p style="color:var(--color-gray);margin-top:12px;">Our certified Monogram technicians diagnose error codes using factory service tools and carry the most common OEM replacement parts on every service vehicle. Most repairs are completed in a single visit. Call <a href="tel:<?php echo BRP_PHONE_RAW; ?>"><?php echo BRP_PHONE; ?></a> or use the booking form below to schedule same-day service.</p>
+
+                <h3 style="margin-top:32px;margin-bottom:12px;">Appliances Covered in This Database</h3>
+                <ul style="color:var(--color-gray);display:flex;flex-direction:column;gap:6px;padding-left:20px;">
+                    <li><strong>Monogram Dishwashers</strong> — water inlet, drain, heating, pump, door latch, and flood protection codes</li>
+                    <li><strong>Monogram Refrigerators</strong> — defrost, fan motor, temperature sensor, ice maker, and communication codes</li>
+                    <li><strong>Monogram Ranges &amp; Ovens</strong> — temperature sensor, door lock, relay, control board, and runaway temperature codes</li>
+                    <li><strong>Monogram Wall Ovens</strong> — sensor, latch, convection, and relay fault codes</li>
+                    <li><strong>Monogram Cooktops</strong> — surface element, control lock, temperature sensor, and communication codes</li>
+                    <li><strong>Monogram Speed Ovens</strong> — control board, sensor, door interlock, and fan motor codes</li>
+                </ul>
+            </div>
+
         </div>
     </section>
 
@@ -286,6 +307,20 @@ if ( is_post_type_archive( 'error_code' ) ) :
                 </div>
                 <?php endforeach; ?>
             </div>
+
+            <!-- SEO content block -->
+            <div style="max-width:800px;margin:64px auto 0;border-top:1px solid var(--color-gray-light);padding-top:48px;">
+                <h2 style="margin-bottom:16px;">Why Monogram Appliances Require Specialist Repair</h2>
+                <p style="color:var(--color-gray);">Monogram is GE's professional-grade appliance line, built to tighter tolerances and with more sophisticated electronics than standard consumer appliances. A Monogram refrigerator, range, or dishwasher is not repaired the same way as a basic model. These appliances use proprietary control boards, specialized sensors, and OEM-specific components that must be sourced through authorized channels. Using aftermarket parts or following generic repair procedures can cause secondary damage, void the remaining warranty, and result in appliance performance that falls below factory specifications.</p>
+                <p style="color:var(--color-gray);margin-top:12px;">Our technicians train specifically on Monogram product lines. They understand how Monogram's connected appliances communicate with smart home systems, how the column refrigerator sealed systems are configured, and how Monogram's professional-style ranges are calibrated from the factory. This depth of product knowledge means faster, more accurate diagnosis — and repairs that last.</p>
+
+                <h3 style="margin-top:32px;margin-bottom:12px;">Our Repair Process</h3>
+                <p style="color:var(--color-gray);">Every Monogram repair starts with a thorough diagnostic. Our technician arrives with factory-level diagnostic tools and a stocked service vehicle carrying the most common OEM Monogram replacement parts. After identifying the fault, we provide a clear, upfront quote before any work begins. There are no hidden labor charges and no surprise fees. Once you approve the quote, we complete the repair — typically within the same visit — and run a full test cycle before leaving your home.</p>
+                <p style="color:var(--color-gray);margin-top:12px;">Every repair is backed by our 90-day labor warranty. If the same fault returns within 90 days of service, we return and fix it at no additional charge. We stand behind our work because we know Monogram appliances and we know how to fix them correctly the first time.</p>
+
+                <h3 style="margin-top:32px;margin-bottom:12px;">Same-Day Service Available</h3>
+                <p style="color:var(--color-gray);">A broken appliance disrupts your household. We offer same-day and next-day service appointments across all our service areas. Call <a href="tel:<?php echo BRP_PHONE_RAW; ?>"><?php echo BRP_PHONE; ?></a> or use the booking form below to schedule your repair. We confirm appointments quickly and send a technician who arrives on time, prepared to complete your repair in a single visit.</p>
+            </div>
         </div>
     </section>
 
@@ -334,6 +369,20 @@ if ( is_post_type_archive( 'error_code' ) ) :
                     </div>
                 </a>
                 <?php endforeach; ?>
+            </div>
+
+            <!-- SEO content block -->
+            <div style="max-width:800px;margin:64px auto 0;border-top:1px solid var(--color-gray-light);padding-top:48px;">
+                <h2 style="margin-bottom:16px;">Certified Monogram Appliance Repair in Your Area</h2>
+                <p style="color:var(--color-gray);">Monogram appliances are high-performance machines that require technicians with specific product knowledge and access to genuine OEM replacement parts. A standard appliance repair company may be unfamiliar with Monogram's integrated cooling systems, professional range configurations, or the diagnostics behind a Monogram error code. Our service network is built around Monogram expertise — every technician in every city we cover has been trained specifically on Monogram product lines and arrives stocked with the most common Monogram parts.</p>
+                <p style="color:var(--color-gray);margin-top:12px;">We provide service across major U.S. metropolitan areas. Each service area includes the city center and all surrounding suburbs within the metropolitan region. You don't need to be in the city itself to get fast service — our technicians cover the broader metro area and can typically reach you the same day or the next business day.</p>
+
+                <h3 style="margin-top:32px;margin-bottom:12px;">What to Expect When You Book</h3>
+                <p style="color:var(--color-gray);">When you schedule a Monogram appliance repair through our service, you can expect a confirmed appointment window, a technician who arrives on time, and a clear diagnosis with an upfront quote before any work begins. We do not charge hidden fees. The quote you receive is the price you pay. After completing the repair, we test the appliance through a full cycle to confirm it is operating correctly before we leave.</p>
+                <p style="color:var(--color-gray);margin-top:12px;">All repairs come with our 90-day labor warranty. If the same fault returns within 90 days, we come back and resolve it at no additional cost. Select your city above to view local service details, zip codes covered, and local contact information for scheduling.</p>
+
+                <h3 style="margin-top:32px;margin-bottom:12px;">Appliances We Service in Every City</h3>
+                <p style="color:var(--color-gray);">Regardless of which city you're in, our technicians service the full range of Monogram appliances — refrigerators, dishwashers, ranges, wall ovens, cooktops, speed ovens, wine coolers, range hoods, washers, and dryers. Whether you have a built-in column refrigerator, a 48-inch professional range, or an integrated panel-ready dishwasher, we have the training and parts to fix it correctly. Call <a href="tel:<?php echo BRP_PHONE_RAW; ?>"><?php echo BRP_PHONE; ?></a> to speak with a local scheduler or book online below.</p>
             </div>
 
         </div>
