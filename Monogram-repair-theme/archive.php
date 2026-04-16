@@ -240,8 +240,6 @@ if ( is_post_type_archive( 'error_code' ) ) :
                         <?php the_content(); ?>
                     </div>
                 <?php endwhile; ?>
-            <?php else : ?>
-                <p style="color:var(--color-gray);">No additional recall notices at this time. Visit <a href="https://www.cpsc.gov/Recalls" target="_blank" rel="noopener">CPSC.gov</a> for the complete and up-to-date list of active Monogram recalls.</p>
             <?php endif; ?>
 
             <div style="border-top:1px solid var(--color-gray-light);padding-top:48px;margin-top:48px;">

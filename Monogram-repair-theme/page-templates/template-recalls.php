@@ -87,10 +87,6 @@ $recall_faqs = array(
 <section class="section">
     <div class="container">
 
-        <div class="notice notice-warning" style="max-width:800px;margin:0 auto 48px;">
-            <strong>⚠️ Safety Notice:</strong> This page is maintained for informational purposes and is updated periodically. For the most current and complete list of active recalls, always verify at <strong>CPSC.gov</strong> or <strong>SaferProducts.gov</strong>. If a recall notice advises you to stop using the appliance, do so immediately and contact the manufacturer or our service team to arrange a free remedy.
-        </div>
-
         <div class="section-header text-center">
             <span class="section-label">Active Recalls</span>
             <h2 class="section-title">Recent Monogram Appliance Recalls</h2>
