@@ -333,8 +333,6 @@ if ( is_post_type_archive( 'error_code' ) ) :
             <div class="section-header text-center" style="max-width:800px;margin:0 auto 48px;">
                 <span class="section-label">Where We Work</span>
                 <h2 class="section-title">Cities We Service</h2>
-                <p class="section-desc" style="margin-top:16px;">Same-day and next-day Monogram appliance repair available in all service areas. Select your city for local contact details, coverage information, and service availability.</p>
-                <p style="color:var(--color-gray);margin-top:12px;">Our service network covers major metropolitan areas across the United States. Each location is staffed by factory-trained Monogram technicians who are familiar with the specific installation environments common in that region — from high-rise condominiums and townhomes to large single-family residences. We carry a full inventory of OEM Monogram parts on every service vehicle, ensuring that most repairs in your area can be completed on the first visit. Whether you need a refrigerator repaired in a high-rise or a range serviced in a suburban home, our local technicians provide the same level of certified expertise. Click your city below to view local service details, coverage zip codes, and contact information.</p>
             </div>
 
             <div class="city-cards-grid">
@@ -358,6 +356,12 @@ if ( is_post_type_archive( 'error_code' ) ) :
                     </div>
                 </a>
                 <?php endforeach; ?>
+            </div>
+
+            <!-- Intro text -->
+            <div style="max-width:800px;margin:48px auto 0;text-align:center;">
+                <p class="section-desc">Same-day and next-day Monogram appliance repair available in all service areas. Select your city for local contact details, coverage information, and service availability.</p>
+                <p style="color:var(--color-gray);margin-top:12px;">Our service network covers major metropolitan areas across the United States. Each location is staffed by factory-trained Monogram technicians who are familiar with the specific installation environments common in that region — from high-rise condominiums and townhomes to large single-family residences. We carry a full inventory of OEM Monogram parts on every service vehicle, ensuring that most repairs in your area can be completed on the first visit. Whether you need a refrigerator repaired in a high-rise or a range serviced in a suburban home, our local technicians provide the same level of certified expertise. Click your city below to view local service details, coverage zip codes, and contact information.</p>
             </div>
 
             <!-- SEO content block -->
