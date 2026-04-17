@@ -22,6 +22,8 @@ $appliance_labels = array(
     'cooktop'      => 'Cooktop',
     'microwave'    => 'Microwave',
     'freezer'      => 'Freezer',
+    'wine-cooler'  => 'Wine Cooler',
+    'hood'         => 'Range Hood',
 );
 $appliance_title = isset( $appliance_labels[ $appliance_slug ] ) ? $appliance_labels[ $appliance_slug ] : get_the_title();
 
@@ -370,6 +372,8 @@ $ec_categories = array(
                                 'cooktop'      => 'Cooktop',
                                 'microwave'    => 'Microwave',
                                 'freezer'      => 'Freezer',
+                                'wine-cooler'  => 'Wine Cooler',
+                                'hood'         => 'Range Hood',
                             );
                             foreach ( $all_types as $slug => $label ) :
                                 if ( $slug === $appliance_slug ) continue; ?>
@@ -453,6 +457,8 @@ $ec_categories = array(
                                 'cooktop'      => 'Cooktop',
                                 'microwave'    => 'Microwave',
                                 'freezer'      => 'Freezer',
+                                'wine-cooler'  => 'Wine Cooler',
+                                'hood'         => 'Range Hood',
                             );
                             foreach ( $all_types as $slug => $label ) :
                                 if ( $slug === $appliance_slug ) continue; ?>

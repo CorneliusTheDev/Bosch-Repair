@@ -152,6 +152,20 @@ add_action( 'wp_loaded', function() {
     set_transient( 'brp_error_codes_v3_done', true, YEAR_IN_SECONDS );
 } );
 
+// Auto-populate error codes v4 (microwave +2: F11, E6)
+add_action( 'wp_loaded', function() {
+    if ( get_transient( 'brp_error_codes_v4_done' ) ) return;
+    include get_template_directory() . '/inc/create-error-codes-v4.php';
+    set_transient( 'brp_error_codes_v4_done', true, YEAR_IN_SECONDS );
+} );
+
+// Auto-populate error codes v5 (wine cooler 11 codes, range hood 11 codes)
+add_action( 'wp_loaded', function() {
+    if ( get_transient( 'brp_error_codes_v5_done' ) ) return;
+    include get_template_directory() . '/inc/create-error-codes-v5.php';
+    set_transient( 'brp_error_codes_v5_done', true, YEAR_IN_SECONDS );
+} );
+
 // Auto-populate error codes once
 add_action( 'wp_loaded', function() {
     if ( get_transient( 'brp_error_codes_done' ) ) return;
@@ -273,6 +287,44 @@ function brp_enqueue_assets() {
         .main-nav a { font-size: 1.05rem !important; font-weight: 600 !important; padding: 8px 16px !important; }
         .header-phone { font-size: 1.1rem !important; }
         .header-cta { gap: 28px !important; }
+
+        /* Header & footer — dark blue */
+        .site-header { background: #072264 !important; box-shadow: 0 2px 20px rgba(0,0,0,0.3) !important; }
+        .site-footer { background: #072264 !important; }
+        @media (max-width: 1024px) { .main-nav { background: #072264 !important; } }
+
+        /* Book Now button — white bg + dark text for visibility on dark header */
+        .header-cta .btn-primary { background: #ffffff !important; color: #072264 !important; border-color: #ffffff !important; font-weight: 700 !important; }
+        .header-cta .btn-primary:hover { background: #e3eaf7 !important; color: #072264 !important; border-color: #e3eaf7 !important; }
+
+        /* Service card images — uniform size, cover fill */
+        .service-card-img-wrap { height: 260px !important; background: #f0f7ff !important; }
+        .service-card-img-wrap img { object-fit: cover !important; object-position: center center !important; }
+
+        /* Repair page appliance image — full width at top, text below */
+        .appliance-image { width: 100% !important; max-width: 100% !important; margin: 0 0 32px 0 !important; height: 360px !important; border-radius: var(--border-radius-lg) !important; }
+        .appliance-image img { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center center !important; }
+
+        /* Hero (esas sehife, header altı) — aga yaxin aciq mavi */
+        .hero { background: #dbeafe !important; }
+        .hero h1 { color: #0d47a1 !important; }
+        .hero h1 span { color: #1976d2 !important; }
+        .hero-subtitle { color: #1a3a6c !important; }
+        .hero-badge { background: rgba(25,118,210,0.1) !important; border-color: rgba(25,118,210,0.3) !important; color: #1565c0 !important; }
+        .hero-stat { background: rgba(255,255,255,0.75) !important; border-color: rgba(25,118,210,0.2) !important; box-shadow: 0 4px 16px rgba(0,0,0,0.08) !important; }
+        .hero-stat-number { color: #0d47a1 !important; text-shadow: none !important; }
+        .hero-stat-label { color: #1a3a6c !important; }
+
+        /* Page-hero (diger sehifeler, header altı) — aga yaxin aciq mavi */
+        .page-hero { background: #dbeafe !important; }
+        .page-hero h1 { color: #0d47a1 !important; }
+        .page-hero p { color: #1a3a6c !important; }
+
+        /* Appointment section (footer ustü) — aga yaxin aciq mavi */
+        .appointment-section { background: #dbeafe !important; }
+        .appointment-info h2 { color: #0d47a1 !important; }
+        .appointment-info p { color: #1a3a6c !important; }
+        .appointment-features li { color: #1a3a6c !important; }
     ' );
 
     // Main JS
@@ -447,7 +499,7 @@ add_action( 'init', 'brp_register_taxonomies' );
 // resolves to the WP page, not an error_code post lookup.
 // ============================================================
 add_action( 'init', function() {
-    $appliances = array( 'dishwasher', 'washer', 'dryer', 'refrigerator', 'oven', 'cooktop', 'microwave', 'freezer' );
+    $appliances = array( 'dishwasher', 'washer', 'dryer', 'refrigerator', 'oven', 'cooktop', 'microwave', 'freezer', 'wine-cooler', 'hood' );
     foreach ( $appliances as $appliance ) {
         add_rewrite_rule(
             '^error-codes/' . $appliance . '/?$',
@@ -467,7 +519,7 @@ add_filter( 'template_include', function( $template ) {
     $parent_id   = get_post_field( 'post_parent', get_queried_object_id() );
     $parent_slug = $parent_id ? get_post_field( 'post_name', $parent_id ) : '';
 
-    $ec_appliances = array( 'dishwasher', 'washer', 'dryer', 'refrigerator', 'oven', 'cooktop', 'microwave', 'freezer' );
+    $ec_appliances = array( 'dishwasher', 'washer', 'dryer', 'refrigerator', 'oven', 'cooktop', 'microwave', 'freezer', 'wine-cooler', 'hood' );
 
     // /error-codes/ → hub template
     if ( $slug === 'error-codes' ) {
@@ -497,6 +549,8 @@ function brp_create_error_code_pages() {
         'cooktop'      => 'Monogram Cooktop Error Codes',
         'microwave'    => 'Monogram Microwave Error Codes',
         'freezer'      => 'Monogram Freezer Error Codes',
+        'wine-cooler'  => 'Monogram Wine Cooler Error Codes',
+        'hood'         => 'Monogram Range Hood Error Codes',
     );
 
     $needs_flush = false;
@@ -1647,6 +1701,8 @@ add_action( 'init', function() {
         'cooktop'      => 'Monogram Cooktop Error Codes',
         'microwave'    => 'Monogram Microwave Error Codes',
         'freezer'      => 'Monogram Freezer Error Codes',
+        'wine-cooler'  => 'Monogram Wine Cooler Error Codes',
+        'hood'         => 'Monogram Range Hood Error Codes',
     );
 
     foreach ( $appliances as $slug => $title ) {
@@ -1709,6 +1765,24 @@ add_action( 'wp_footer', function() {
     });
     </script>';
 }, 99 );
+
+// ONE-TIME: Replace automattic.com/privacy/ URL inside the Privacy Policy page content in DB
+add_action( 'wp_loaded', function() {
+    if ( get_transient( 'brp_privacy_url_fix_done' ) ) return;
+    $page = get_page_by_path( 'privacy-policy' );
+    if ( $page && str_contains( $page->post_content, 'automattic.com/privacy' ) ) {
+        $new_content = str_replace(
+            'https://automattic.com/privacy/',
+            'https://monogramsupportcenter.com',
+            $page->post_content
+        );
+        wp_update_post( array(
+            'ID'           => $page->ID,
+            'post_content' => $new_content,
+        ) );
+    }
+    set_transient( 'brp_privacy_url_fix_done', true, YEAR_IN_SECONDS );
+} );
 
 // Replace Automattic privacy policy URL in comments form with site-specific URL
 add_filter( 'wp_get_privacy_policy_url', function( $url ) {

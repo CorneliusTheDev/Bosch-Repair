@@ -1701,8 +1701,8 @@ p:last-child { margin-bottom: 0; }
     overflow: hidden;
     box-shadow: var(--shadow-md);
     margin: 0 auto 32px;
-    height: 220px;
     max-width: 360px;
+    height: 220px;
     background: var(--color-white);
     display: flex;
     align-items: center;

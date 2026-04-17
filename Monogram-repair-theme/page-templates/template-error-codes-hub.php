@@ -20,6 +20,8 @@ $categories = array(
     array( 'slug' => 'cooktop',      'label' => 'Cooktops',         'desc' => 'Monogram cooktop error codes and diagnostics' ),
     array( 'slug' => 'microwave',    'label' => 'Microwaves',       'desc' => 'Monogram microwave error codes and diagnostics' ),
     array( 'slug' => 'freezer',      'label' => 'Freezers',         'desc' => 'Monogram freezer error codes and diagnostics' ),
+    array( 'slug' => 'wine-cooler',  'label' => 'Wine Coolers',     'desc' => 'Monogram wine cooler error codes and diagnostics' ),
+    array( 'slug' => 'hood',         'label' => 'Range Hoods',      'desc' => 'Monogram range hood error codes and diagnostics' ),
 );
 
 ?>

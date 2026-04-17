@@ -17,6 +17,8 @@ $categories = array(
     array( 'slug' => 'cooktop',      'label' => 'Cooktops',         'icon' => '♨️', 'desc' => 'Monogram cooktop error codes and diagnostics' ),
     array( 'slug' => 'microwave',    'label' => 'Microwaves',       'icon' => '📡', 'desc' => 'Monogram microwave error codes and diagnostics' ),
     array( 'slug' => 'freezer',      'label' => 'Freezers',         'icon' => '❄️', 'desc' => 'Monogram freezer error codes and diagnostics' ),
+    array( 'slug' => 'wine-cooler',  'label' => 'Wine Coolers',     'icon' => '🍷', 'desc' => 'Monogram wine cooler error codes and diagnostics' ),
+    array( 'slug' => 'hood',         'label' => 'Range Hoods',      'icon' => '💨', 'desc' => 'Monogram range hood error codes and diagnostics' ),
 );
 
 // Build error codes dynamically from the database

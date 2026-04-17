@@ -229,9 +229,6 @@ if ( is_post_type_archive( 'error_code' ) ) :
     <section class="section">
         <div class="container" style="max-width:860px;">
 
-            <div class="notice notice-warning" style="margin-bottom:40px;">
-                <strong>⚠️ Safety Notice:</strong> Always verify recall status at <strong>CPSC.gov</strong> for the most current information. If a recall advises you to stop using the appliance, do so immediately and contact the manufacturer to arrange a free remedy.
-            </div>
 
             <?php if ( have_posts() ) : ?>
                 <?php while ( have_posts() ) : the_post(); ?>
