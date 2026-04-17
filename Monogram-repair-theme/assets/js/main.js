@@ -26,18 +26,16 @@
             }
         });
 
-        // Mobile sub-menu toggles
-        const navItems = mainNav.querySelectorAll('li');
-        navItems.forEach(function (li) {
-            const subMenu = li.querySelector('.sub-menu');
-            const link    = li.querySelector('a');
-            if (subMenu && link && window.innerWidth <= 1024) {
-                link.addEventListener('click', function (e) {
-                    if (window.innerWidth <= 1024) {
-                        e.preventDefault();
-                        li.classList.toggle('is-open');
-                    }
-                });
+        // Sub-menu toggles — desktop only (hover handles it via CSS)
+        // On mobile, sub-menus are hidden entirely so parent links navigate directly
+
+        // ESC açarı mobil navı bağlayır
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && mainNav.classList.contains('is-open')) {
+                mainNav.classList.remove('is-open');
+                navToggle.setAttribute('aria-expanded', 'false');
+                navToggle.focus();
+                document.body.style.overflow = '';
             }
         });
     }

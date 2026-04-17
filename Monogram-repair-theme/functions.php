@@ -325,6 +325,75 @@ function brp_enqueue_assets() {
         .appointment-info h2 { color: #0d47a1 !important; }
         .appointment-info p { color: #1a3a6c !important; }
         .appointment-features li { color: #1a3a6c !important; }
+
+        /* ============================================================
+           MOBİL UYĞUNLAŞDIRMA — yalnız kiçik ekranlar (desktop dəyişmir)
+           ============================================================ */
+
+        /* Header-cta (Book Now + phone) mobilde gizlət — yeri yoxdur, hamburger kəsilir */
+        @media (max-width: 1024px) {
+            .header-cta { display: none !important; }
+            .site-logo { flex-shrink: 1 !important; min-width: 0 !important; }
+            .site-header .container { overflow: visible !important; }
+        }
+
+        /* Mobilde sub-menyu tamamilə gizlənir — hər link birbaşa öz səhifəsinə keçir */
+        @media (max-width: 1024px) {
+            .main-nav .sub-menu { display: none !important; }
+            .sub-menu-toggle { display: none !important; }
+        }
+
+        /* Alt menü daşması — 320-400px telefonlar */
+        @media (max-width: 480px) {
+            .main-nav .sub-menu { min-width: auto !important; width: 100% !important; }
+        }
+
+        /* Şəkil hündürlükləri — telefonda çox böyük görünür */
+        @media (max-width: 480px) {
+            .service-card-img-wrap { height: 140px !important; }
+            .city-img-wrap         { height: 130px !important; }
+            .appliance-image       { height: 200px !important; }
+            .post-card-img         { height: 140px !important; }
+        }
+
+        /* Hero şəkilinin sol boşluğu — front-page.php inline margin-left:120px */
+        @media (max-width: 960px) {
+            .hero-image-col { margin-left: 0 !important; max-width: 100% !important; }
+        }
+
+        /* Düymə ölçüləri + hero CTA şaquli düzülüş */
+        @media (max-width: 480px) {
+            .btn    { padding: 12px 20px !important; font-size: 0.95rem !important; }
+            .btn-lg { padding: 14px 24px !important; font-size: 1rem !important; }
+            .hero-cta { flex-direction: column !important; align-items: center !important; gap: 12px !important; }
+        }
+
+        /* Bölmə padding-i — telefonlarda daha kompakt */
+        @media (max-width: 480px) {
+            .section { padding: 48px 0 !important; }
+        }
+
+        /* Randevu formu padding-i */
+        @media (max-width: 480px) {
+            .appointment-form-wrapper { padding: 20px 16px !important; }
+        }
+
+        /* Xəta kodu pillləri */
+        @media (max-width: 480px) {
+            .ec-pills-section { padding: 16px 14px 14px !important; }
+            .ec-pill { padding: 6px 12px !important; font-size: 0.8rem !important; }
+        }
+
+        /* Üzən telefon düyməsi — iOS safe-area */
+        @media (max-width: 480px) {
+            .floating-phone { bottom: max(16px, env(safe-area-inset-bottom, 16px)) !important; right: 16px !important; }
+            .floating-phone-btn { width: 52px !important; height: 52px !important; font-size: 1.3rem !important; }
+        }
+
+        /* Cədvəl üfüqi sürüşdürmə */
+        @media (max-width: 640px) {
+            .styled-table { display: block !important; overflow-x: auto !important; -webkit-overflow-scrolling: touch !important; white-space: nowrap; }
+        }
     ' );
 
     // Main JS
