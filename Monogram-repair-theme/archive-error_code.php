@@ -183,7 +183,7 @@ $hub_url = get_post_type_archive_link( 'error_code' );
                         <ul class="checklist" style="gap:8px;">
                             <li>Factory-certified Monogram parts</li>
                             <li>Same-day service available</li>
-                            <li>90-day labor warranty</li>
+                            <li>30-day labor warranty</li>
                             <li>Trained, background-checked techs</li>
                         </ul>
                     </div>
@@ -217,9 +217,11 @@ $most_searched_map = array(
     'dryer'        => '001',
     'refrigerator' => 'FF',
     'oven'         => 'F2',
-    'cooktop'      => 'F',
+    'cooktop'      => 'E1',
     'microwave'    => 'F3',
     'freezer'      => 'FF',
+    'wine-cooler'  => 'EC',
+    'hood'         => 'E1',
 );
 ?>
 

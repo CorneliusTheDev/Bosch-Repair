@@ -23,7 +23,7 @@ $cities   = brp_get_cities();
                 </div>
                 <h1>Expert <span>Monogram Appliance</span> Repair You Can Trust</h1>
                 <p class="hero-subtitle">
-                    Same-day service across 6 major cities. Factory-certified parts, highly trained technicians, and a 90-day labor warranty on every repair.
+                    Same-day service across 6 major cities. Factory-certified parts, highly trained technicians, and a 30-day labor warranty on every repair.
                 </p>
                 <div class="hero-cta">
                     <a href="#schedule" class="btn btn-primary btn-lg">Schedule Repair</a>
@@ -31,11 +31,11 @@ $cities   = brp_get_cities();
                 </div>
             </div>
 
-            <!-- RIGHT: stats image -->
-            <div class="hero-image-col" style="width:100%;max-width:480px;margin-left:120px;">
-                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/hero-stats.png' ); ?>"
-                     alt="15k+ Repairs Completed, 6 Major Cities, 90-Day Labor Warranty, 4.9 Avg Rating"
-                     style="width:100%;height:auto;border-radius:16px;"
+            <!-- RIGHT: kitchen image -->
+            <div class="hero-image-col">
+                <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/logo-r.png' ); ?>"
+                     alt="Monogram Kitchen Appliance Repair"
+                     style="width:calc(100% + 60px);height:400px;object-fit:cover;border-radius:16px;"
                      loading="eager">
             </div>
 
@@ -49,7 +49,7 @@ $cities   = brp_get_cities();
         <div class="trust-bar-inner">
             <div class="trust-item">Factory-Certified Parts</div>
             <div class="trust-item">Highly Trained Technicians</div>
-            <div class="trust-item">90-Day Labor Warranty</div>
+            <div class="trust-item">30-Day Labor Warranty</div>
             <div class="trust-item">Same-Day Service Available</div>
             <div class="trust-item">Upfront, Transparent Pricing</div>
         </div>
@@ -112,8 +112,8 @@ $cities   = brp_get_cities();
                     <div class="feature-item">
                         <div class="feature-icon" style="font-size:1rem;font-weight:800;font-family:monospace;">03</div>
                         <div class="feature-content">
-                            <h4>90-Day Labor Warranty</h4>
-                            <p>Every repair is backed by our 90-day labor warranty. If the same issue returns within 90 days, we come back and fix it — free of charge.</p>
+                            <h4>30-Day Labor Warranty</h4>
+                            <p>Every repair is backed by our 30-day labor warranty. If the same issue returns within 30 days, we come back and fix it — free of charge.</p>
                         </div>
                     </div>
                     <div class="feature-item">

@@ -103,7 +103,7 @@ $error_code_val = get_post_meta( get_the_ID(), '_brp_error_code', true );
                         <ul class="checklist" style="gap:8px;">
                             <li>Factory-certified Monogram parts</li>
                             <li>Highly trained technicians</li>
-                            <li>90-day labor warranty</li>
+                            <li>30-day labor warranty</li>
                             <li>Same-day service available</li>
                         </ul>
                     </div>

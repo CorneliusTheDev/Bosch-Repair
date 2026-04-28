@@ -122,7 +122,7 @@ brp_setup_create_page( 'Terms of Use', 'terms-of-use', 'page-templates/template-
     <h3>Services</h3>
     <p>Monogram Repair Pro provides independent appliance repair services. We are not affiliated with, authorized by, or endorsed by GE Appliances, LLC. The Monogram name and related trademarks are used for identification purposes only.</p>
     <h3>Service Appointments</h3>
-    <p>By scheduling a service appointment, you authorize our technician to diagnose and repair your appliance. A diagnostic fee may apply if you decline the quoted repair. All repairs include a 90-day labor warranty.</p>
+    <p>By scheduling a service appointment, you authorize our technician to diagnose and repair your appliance. A diagnostic fee may apply if you decline the quoted repair. All repairs include a 30-day labor warranty.</p>
     <h3>Payment</h3>
     <p>Payment is due upon completion of service. We accept major credit cards, debit cards, and checks. Pricing is provided upfront before any work begins.</p>
     <h3>Limitation of Liability</h3>
@@ -217,7 +217,7 @@ brp_setup_create_cpt( 'service', 'Monogram Wine Cooler Repair', 'monogram-wine-c
         <li><strong>Upfront Quote:</strong> We explain the fault in plain language and give you a fixed price before any work begins. No hidden fees.</li>
         <li><strong>Precision Repair:</strong> We use only genuine, factory-certified Monogram replacement parts to ensure your cooler performs to original factory specifications.</li>
         <li><strong>Temperature Verification:</strong> After completing the repair, we verify that both zones are reaching and holding the correct set temperatures before we leave.</li>
-        <li><strong>90-Day Warranty:</strong> Your repair is backed by our 90-day labor warranty. If the same fault returns, we come back and fix it at no charge.</li>
+        <li><strong>30-Day Warranty:</strong> Your repair is backed by our 30-day labor warranty. If the same fault returns, we come back and fix it at no charge.</li>
     </ol>
 
     <h3>Why Choose Genuine Monogram Parts?</h3>

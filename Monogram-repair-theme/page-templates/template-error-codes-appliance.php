@@ -353,7 +353,7 @@ $ec_categories = array(
                         <ul class="checklist" style="gap:8px;">
                             <li>Factory-certified Monogram parts</li>
                             <li>Same-day service available</li>
-                            <li>90-day labor warranty</li>
+                            <li>30-day labor warranty</li>
                             <li>Trained, background-checked techs</li>
                         </ul>
                     </div>

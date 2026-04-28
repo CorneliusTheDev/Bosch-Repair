@@ -76,6 +76,10 @@ if ( $ec_query->have_posts() ) {
                 $term       = get_term_by( 'slug', $cat['slug'], 'appliance_type' );
                 $code_count = ( $term && ! is_wp_error( $term ) ) ? (int) $term->count : 0;
                 $top_code   = ( $code_count > 0 ) ? brp_get_most_searched_by_appliance( $cat['slug'] ) : null;
+                if ( ! $top_code ) {
+                    $top_defaults = array( 'dishwasher' => 'LEAK DETECTED', 'washer' => 'E22', 'dryer' => '001', 'refrigerator' => 'FF', 'oven' => 'F2', 'cooktop' => 'E1', 'microwave' => 'F3', 'freezer' => 'FF', 'wine-cooler' => 'EC', 'hood' => 'E1' );
+                    $top_code = isset( $top_defaults[ $cat['slug'] ] ) ? $top_defaults[ $cat['slug'] ] : null;
+                }
                 $page_url   = home_url( '/error-codes/' . $cat['slug'] . '/' );
             ?>
             <a href="<?php echo esc_url( $page_url ); ?>" class="ec-cat-card ec-cat-card--link">

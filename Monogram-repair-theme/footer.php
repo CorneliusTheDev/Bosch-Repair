@@ -25,16 +25,30 @@
                         <span class="site-logo-tagline">Certified Appliance Repair</span>
                     </div>
                 </a>
-                <p>Professional <?php echo BRP_BRAND; ?> appliance repair service with factory-certified parts, highly trained technicians, and a 90-day labor warranty. Serving Chicago, San Francisco, Houston, Miami, Los Angeles, and New York.</p>
+                <p>Professional <?php echo BRP_BRAND; ?> appliance repair service with factory-certified parts, highly trained technicians, and a 30-day labor warranty. Serving Chicago, San Francisco, Houston, Miami, Los Angeles, and New York.</p>
                 <div class="footer-contact-item">
                     <div>
-                        <strong><a href="tel:<?php echo BRP_PHONE_RAW; ?>" style="color:white;"><?php echo BRP_PHONE; ?></a></strong>
-                        <span style="display:block;font-size:0.8rem;color:rgba(255,255,255,0.5)">Mon–Fri: 7am–8pm</span>
-                        <span style="display:block;font-size:0.8rem;color:rgba(255,255,255,0.5)">Sat–Sun: 9am–5pm</span>
+                        <strong><a href="tel:<?php echo BRP_PHONE_RAW; ?>" style="color:white;font-size:1.1rem;letter-spacing:0.02em;"><?php echo BRP_PHONE; ?></a></strong>
+                        <span style="display:block;font-size:0.85rem;color:rgba(255,255,255,0.9);font-weight:700;margin-top:4px;">Mon–Fri: 7am–8pm</span>
+                        <span style="display:block;font-size:0.85rem;color:rgba(255,255,255,0.9);font-weight:700;">Sat–Sun: 9am–5pm</span>
                     </div>
                 </div>
                 <div class="footer-contact-item">
-                    <a href="mailto:<?php echo BRP_EMAIL; ?>" style="color:rgba(255,255,255,0.65);"><?php echo BRP_EMAIL; ?></a>
+                    <a href="mailto:<?php echo BRP_EMAIL; ?>" style="color:white;font-weight:700;font-size:0.95rem;"><?php echo BRP_EMAIL; ?></a>
+                </div>
+                <div style="display:flex;gap:16px;margin-top:16px;">
+                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;color:white;font-weight:800;font-size:0.95rem;text-decoration:none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                        Facebook
+                    </a>
+                    <a href="https://www.tumblr.com" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;color:white;font-weight:800;font-size:0.95rem;text-decoration:none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.547 2.371h.028a4.9 4.9 0 0 0 2.245-.572v3.596a10.5 10.5 0 0 1-3.754.388z"/></svg>
+                        Tumblr
+                    </a>
+                    <a href="https://www.quora.com" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;color:white;font-weight:800;font-size:0.95rem;text-decoration:none;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12c2.4 0 4.635-.706 6.512-1.924l-1.98-2.233A8.47 8.47 0 0 1 12 20.5C7.306 20.5 3.5 16.694 3.5 12S7.306 3.5 12 3.5 20.5 7.306 20.5 12a8.47 8.47 0 0 1-1.35 4.618l1.98 2.23A11.94 11.94 0 0 0 24 12C24 5.373 18.627 0 12 0zm1.63 16.552-1.302-1.473c-.407.12-.84.171-1.328.171-2.742 0-4.7-2.01-4.7-4.75s1.958-4.75 4.7-4.75 4.7 2.01 4.7 4.75c0 1.568-.62 2.93-1.6 3.83l1.302 1.473-1.772.749z"/></svg>
+                        Quora
+                    </a>
                 </div>
             </div>
 
@@ -154,7 +168,6 @@ function brp_footer_blog_fallback() {
         'microwave'    => 'Monogram Microwave',
         'freezer'      => 'Monogram Freezer',
         'maintenance'  => 'Maintenance Tips',
-        'error-codes'  => 'Error Code Guides',
     );
     echo '<ul class="footer-links">';
     foreach ( $appliances as $slug => $label ) {
