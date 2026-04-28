@@ -218,41 +218,191 @@ if ( is_post_type_archive( 'error_code' ) ) :
 
 <?php elseif ( is_post_type_archive( 'recall' ) ) : ?>
 
-    <section class="page-hero">
-        <div class="container">
-            <?php brp_breadcrumbs(); ?>
-            <h1>Monogram Appliance Recalls</h1>
-            <p>Monogram appliances have been subject to safety recalls issued in cooperation with the U.S. Consumer Product Safety Commission (CPSC). This page provides a reference to current and historical Monogram recall notices so you can check whether your appliance is affected. If your appliance is listed below, follow the recommended steps immediately.</p>
-        </div>
-    </section>
+<section class="page-hero">
+    <div class="container">
+        <?php brp_breadcrumbs(); ?>
+        <h1>Product Recalls & Safety Notices</h1>
+        <p>Important safety information about Monogram appliances. Check if your appliance is affected and learn what steps to take next.</p>
+    </div>
+</section>
 
-    <section class="section">
-        <div class="container" style="max-width:860px;">
+<section class="section">
+    <div class="container">
+        <div class="grid grid-3" style="gap:24px;">
 
+            <!-- Card 1 -->
+            <div style="background:#fff;border-radius:var(--border-radius-lg);box-shadow:var(--shadow);padding:28px;display:flex;flex-direction:column;gap:12px;">
+                <h3 style="font-size:1.05rem;margin:0;">Gas Cooktop & Range</h3>
+                <p style="font-size:0.85rem;color:var(--color-gray);margin:0;"><strong>Models Affected:</strong> ZGP366NTSS, ZGP486NDTSS, ZGP366LRSS</p>
+                <p style="font-size:0.9rem;color:var(--color-text);margin:0;flex:1;">Defective burner valve may allow unburned gas to escape, posing a fire and explosion hazard. Stop using affected units immediately and contact us for a free inspection.</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:auto;">
+                    <span style="font-size:0.78rem;background:rgba(255,107,53,0.1);color:#ff6b35;padding:4px 10px;border-radius:20px;font-weight:600;">February 2024</span>
+                    <a href="https://www.cpsc.gov/Recalls" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Learn More ↗</a>
+                </div>
+            </div>
 
-            <?php if ( have_posts() ) : ?>
-                <?php while ( have_posts() ) : the_post(); ?>
-                    <div class="recall-card">
-                        <h3><?php the_title(); ?></h3>
-                        <?php the_content(); ?>
-                    </div>
-                <?php endwhile; ?>
-            <?php endif; ?>
+            <!-- Card 2 -->
+            <div style="background:#fff;border-radius:var(--border-radius-lg);box-shadow:var(--shadow);padding:28px;display:flex;flex-direction:column;gap:12px;">
+                <h3 style="font-size:1.05rem;margin:0;">Built-In Dishwasher</h3>
+                <p style="font-size:0.85rem;color:var(--color-gray);margin:0;"><strong>Models Affected:</strong> ZDT925SSJSS, ZDT870SSJSS, ZDT800SSJSS</p>
+                <p style="font-size:0.9rem;color:var(--color-text);margin:0;flex:1;">Door latch failure may cause mid-cycle release of scalding water or steam, posing a burn hazard. Discontinue use and schedule a recall repair at no cost to you.</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:auto;">
+                    <span style="font-size:0.78rem;background:rgba(255,107,53,0.1);color:#ff6b35;padding:4px 10px;border-radius:20px;font-weight:600;">August 2023</span>
+                    <a href="https://www.cpsc.gov/Recalls" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Learn More ↗</a>
+                </div>
+            </div>
 
-            <div style="border-top:1px solid var(--color-gray-light);padding-top:48px;margin-top:48px;">
-                <h2 style="margin-bottom:16px;">About Monogram Appliance Recalls</h2>
-                <p style="color:var(--color-gray);">A recall is a formal safety action coordinated between the appliance manufacturer and the U.S. Consumer Product Safety Commission. When a defect is identified that poses a risk of fire, injury, or property damage, the manufacturer must notify affected consumers and provide a free remedy — repair, replacement part, or refund. Recalls are legally binding and the manufacturer cannot charge you for the fix.</p>
-                <p style="color:var(--color-gray);margin-top:12px;">Monogram is GE's professional built-in appliance line. Recalls affecting Monogram products have involved gas valve assemblies, door latch mechanisms, water supply lines, and electronic components. If you own a Monogram appliance, it's worth checking your model number against active recall listings at least once a year.</p>
+            <!-- Card 3 -->
+            <div style="background:#fff;border-radius:var(--border-radius-lg);box-shadow:var(--shadow);padding:28px;display:flex;flex-direction:column;gap:12px;">
+                <h3 style="font-size:1.05rem;margin:0;">Built-In Refrigerator & Freezer</h3>
+                <p style="font-size:0.85rem;color:var(--color-gray);margin:0;"><strong>Models Affected:</strong> ZIS480NXLH, ZISS480NNSS, ZIS480NRSS</p>
+                <p style="font-size:0.9rem;color:var(--color-text);margin:0;flex:1;">Internal water line crack may cause hidden leakage beneath cabinetry, posing a slip-and-fall hazard. Our technicians can verify your model and arrange a manufacturer-covered repair.</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:auto;">
+                    <span style="font-size:0.78rem;background:rgba(255,107,53,0.1);color:#ff6b35;padding:4px 10px;border-radius:20px;font-weight:600;">April 2022</span>
+                    <a href="https://www.cpsc.gov/Recalls" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Learn More ↗</a>
+                </div>
+            </div>
 
-                <h3 style="margin-top:32px;margin-bottom:12px;">How to Check Your Model</h3>
-                <p style="color:var(--color-gray);">Locate the model and serial number label on your appliance — typically found inside the door frame on refrigerators and dishwashers, on the underside or base drawer of cooktops and ranges, and on the inner door frame of wall ovens. Monogram model numbers begin with "Z" (e.g., ZGP, ZDT, ZIS). Compare your model against the recall notices listed here and on CPSC.gov.</p>
+            <!-- Card 4 -->
+            <div style="background:#fff;border-radius:var(--border-radius-lg);box-shadow:var(--shadow);padding:28px;display:flex;flex-direction:column;gap:12px;">
+                <h3 style="font-size:1.05rem;margin:0;">Wall Oven</h3>
+                <p style="font-size:0.85rem;color:var(--color-gray);margin:0;"><strong>Models Affected:</strong> ZTD91SSSS, ZTD91SHSS, ZET1SH4SS</p>
+                <p style="font-size:0.9rem;color:var(--color-text);margin:0;flex:1;">Control board defect may cause oven to activate unexpectedly or fail to exit self-clean cycle, posing a fire hazard. Do not use self-clean mode until the recall repair is completed.</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:auto;">
+                    <span style="font-size:0.78rem;background:rgba(255,107,53,0.1);color:#ff6b35;padding:4px 10px;border-radius:20px;font-weight:600;">November 2023</span>
+                    <a href="https://www.cpsc.gov/Recalls" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Learn More ↗</a>
+                </div>
+            </div>
 
-                <h3 style="margin-top:32px;margin-bottom:12px;">Your Rights</h3>
-                <p style="color:var(--color-gray);">Recall remedies do not expire. Even if a recall was issued years ago, you can still claim the free repair today. You do not need to be the original owner, and you do not need a receipt. Your model and serial number are sufficient. If you need help determining whether your Monogram appliance is affected or want to schedule a recall repair, call <a href="tel:<?php echo BRP_PHONE_RAW; ?>"><?php echo BRP_PHONE; ?></a> — our certified technicians can verify your recall status and arrange service the same day.</p>
+            <!-- Card 5 -->
+            <div style="background:#fff;border-radius:var(--border-radius-lg);box-shadow:var(--shadow);padding:28px;display:flex;flex-direction:column;gap:12px;">
+                <h3 style="font-size:1.05rem;margin:0;">Speed Oven & Microwave</h3>
+                <p style="font-size:0.85rem;color:var(--color-gray);margin:0;"><strong>Models Affected:</strong> ZSC1202NSS, ZSC2202NSS, ZSC2201NSS</p>
+                <p style="font-size:0.9rem;color:var(--color-text);margin:0;flex:1;">Control panel malfunction may cause unexpected operation or unintended heating cycles. Call us to confirm your model number and schedule a free recall service visit.</p>
+                <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-top:auto;">
+                    <span style="font-size:0.78rem;background:rgba(255,107,53,0.1);color:#ff6b35;padding:4px 10px;border-radius:20px;font-weight:600;">June 2023</span>
+                    <a href="https://www.cpsc.gov/Recalls" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">Learn More ↗</a>
+                </div>
             </div>
 
         </div>
-    </section>
+    </div>
+</section>
+
+<!-- About Recalls -->
+<section class="section" style="padding-top:0;">
+    <div class="container" style="max-width:860px;">
+        <div style="background:#fff;border-radius:var(--border-radius-lg);padding:36px;box-shadow:var(--shadow);">
+            <h2 style="margin-bottom:20px;">About Monogram Appliance Recalls</h2>
+            <p style="color:var(--color-text);margin-bottom:16px;">A product recall is a formal safety action coordinated between the appliance manufacturer and the U.S. Consumer Product Safety Commission (CPSC). When a defect is identified that poses a risk of fire, electric shock, injury, or property damage, the manufacturer is required by law to notify all affected consumers and provide a free remedy — whether that is a replacement part, a repair, or a full product replacement. Recalls are legally binding, and the manufacturer cannot charge you for the fix under any circumstances.</p>
+            <p style="color:var(--color-text);margin-bottom:16px;">Monogram is GE Appliances' professional built-in line, designed for high-end residential kitchens. Because Monogram appliances are installed in cabinetry and used daily, defects in gas valves, door assemblies, water lines, and control boards can escalate quickly into serious safety hazards. Past Monogram recalls have involved units that were already years into service — which is why it is critical to check your model number even if your appliance has been running without issue.</p>
+            <p style="color:var(--color-text);margin:0;">If your Monogram appliance model number appears in any active or historical recall notice, stop using the affected function immediately and contact us. Our certified Monogram technicians are authorized to perform recall repairs, verify your recall eligibility, and coordinate directly with GE on your behalf — at no cost to you.</p>
+        </div>
+    </div>
+</section>
+
+<!-- How to Check -->
+<section class="section" style="padding-top:0;">
+    <div class="container" style="max-width:860px;">
+        <div style="background:#fff;border-radius:var(--border-radius-lg);padding:36px;box-shadow:var(--shadow);">
+            <h2 style="margin-bottom:20px;">How to Check if Your Monogram Appliance Is Recalled</h2>
+            <p style="color:var(--color-text);margin-bottom:16px;">Every Monogram appliance carries a model and serial number label. The location varies by appliance type:</p>
+            <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:12px;margin-bottom:16px;">
+                <li style="display:flex;align-items:flex-start;gap:12px;">
+                    <span style="color:var(--color-primary);font-weight:700;flex-shrink:0;">&#8250;</span>
+                    <span><strong>Refrigerators & Freezers:</strong> Inside the door frame, upper left or right corner.</span>
+                </li>
+                <li style="display:flex;align-items:flex-start;gap:12px;">
+                    <span style="color:var(--color-primary);font-weight:700;flex-shrink:0;">&#8250;</span>
+                    <span><strong>Dishwashers:</strong> Inside the door frame along the top or side edge.</span>
+                </li>
+                <li style="display:flex;align-items:flex-start;gap:12px;">
+                    <span style="color:var(--color-primary);font-weight:700;flex-shrink:0;">&#8250;</span>
+                    <span><strong>Gas Cooktops & Ranges:</strong> Underside of the unit or inside the base storage drawer.</span>
+                </li>
+                <li style="display:flex;align-items:flex-start;gap:12px;">
+                    <span style="color:var(--color-primary);font-weight:700;flex-shrink:0;">&#8250;</span>
+                    <span><strong>Wall Ovens:</strong> Inner door frame, visible when the oven door is open.</span>
+                </li>
+                <li style="display:flex;align-items:flex-start;gap:12px;">
+                    <span style="color:var(--color-primary);font-weight:700;flex-shrink:0;">&#8250;</span>
+                    <span><strong>Microwaves & Speed Ovens:</strong> Interior cavity wall, typically on the left side.</span>
+                </li>
+            </ul>
+            <p style="color:var(--color-text);margin:0;">Monogram model numbers begin with the letter "Z" — for example, ZGP, ZDT, ZIS, ZTD, or ZSC. Once you have your model number, compare it to the recall notices listed on this page and at <strong>cpsc.gov/Recalls</strong>.</p>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="padding-top:0;">
+    <div class="container" style="max-width:860px;">
+        <div style="background:#fff;border-radius:var(--border-radius-lg);padding:36px;box-shadow:var(--shadow);">
+            <h2 style="margin-bottom:24px;">Frequently Asked Questions About Monogram Recalls</h2>
+            <div style="display:flex;flex-direction:column;gap:24px;">
+                <div>
+                    <h3 style="font-size:1rem;margin-bottom:8px;">Is the recall repair free?</h3>
+                    <p style="color:var(--color-text);margin:0;">Yes. All recall repairs are performed at no cost to the appliance owner. Federal law requires the manufacturer to cover 100% of parts and labor for any recall-related fix. You will not be charged a diagnostic fee, a service call fee, or a parts fee.</p>
+                </div>
+                <div>
+                    <h3 style="font-size:1rem;margin-bottom:8px;">Do I need to be the original owner?</h3>
+                    <p style="color:var(--color-text);margin:0;">No. Recall eligibility is tied to the appliance model and serial number, not to ownership history. If you purchased a home with a Monogram appliance already installed, you are fully entitled to claim the free recall repair. You do not need a receipt or proof of purchase.</p>
+                </div>
+                <div>
+                    <h3 style="font-size:1rem;margin-bottom:8px;">Can I still use my appliance while waiting for the recall repair?</h3>
+                    <p style="color:var(--color-text);margin:0;">It depends on the specific recall. For gas-related recalls, we recommend stopping use of the affected burner or function immediately. For other recalls involving dishwashers or refrigerators, partial use may be safe — but you should confirm with a technician. Call us and we will advise you on safe usage while we arrange your repair appointment.</p>
+                </div>
+                <div>
+                    <h3 style="font-size:1rem;margin-bottom:8px;">How long does a Monogram recall repair take?</h3>
+                    <p style="color:var(--color-text);margin:0;">Most recall repairs are completed in a single visit of one to two hours. In cases where a specific replacement part must be ordered, we will schedule a follow-up appointment as soon as the part arrives. We offer same-day and next-day service in most of our service areas.</p>
+                </div>
+                <div>
+                    <h3 style="font-size:1rem;margin-bottom:8px;">What if my recall was issued years ago — is it too late?</h3>
+                    <p style="color:var(--color-text);margin:0;">No. Recall remedies do not have an expiration date. Even if the recall was announced two or three years ago, you can still claim the free repair today. Manufacturers are required to honor recall remedies indefinitely until the program is officially closed by the CPSC.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Safety Tips -->
+<section class="section" style="padding-top:0;">
+    <div class="container" style="max-width:860px;">
+        <div style="background:#fff;border-radius:var(--border-radius-lg);padding:36px;box-shadow:var(--shadow);">
+            <h2 style="margin-bottom:20px;">Product Safety Tips</h2>
+            <ul style="list-style:none;padding:0;display:flex;flex-direction:column;gap:14px;">
+                <li style="display:flex;align-items:flex-start;gap:12px;">
+                    <span style="color:var(--color-primary);font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
+                    <span>Register your Monogram appliances at GE's product registration portal to receive recall notifications directly.</span>
+                </li>
+                <li style="display:flex;align-items:flex-start;gap:12px;">
+                    <span style="color:var(--color-primary);font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
+                    <span>Regularly check <strong>cpsc.gov/Recalls</strong> and search "GE Monogram" for the latest safety notices.</span>
+                </li>
+                <li style="display:flex;align-items:flex-start;gap:12px;">
+                    <span style="color:var(--color-primary);font-weight:700;flex-shrink:0;margin-top:2px;">✓</span>
+                    <span>Follow all manufacturer usage and maintenance guidelines to reduce the risk of appliance failure.</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- Need Assistance -->
+<section class="section" style="padding-top:0;">
+    <div class="container" style="max-width:860px;">
+        <div style="background:#fff;border-radius:var(--border-radius-lg);padding:36px;box-shadow:var(--shadow);text-align:center;">
+            <h2 style="margin-bottom:12px;">Need Assistance?</h2>
+            <p style="color:var(--color-gray);margin-bottom:24px;">Not sure if your Monogram appliance is affected? Our technicians can check your model, help you through the GE recall process, and perform manufacturer-covered repairs at no cost to you.</p>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+                <a href="tel:<?php echo BRP_PHONE_RAW; ?>" class="btn btn-primary">Call <?php echo BRP_PHONE; ?></a>
+                <a href="#schedule" class="btn btn-secondary">Book Online</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<?php echo brp_appointment_form(); ?>
 
 <?php elseif ( is_post_type_archive( 'service' ) ) :
     $services = brp_get_services();
@@ -262,7 +412,7 @@ if ( is_post_type_archive( 'error_code' ) ) :
         <div class="container">
             <?php brp_breadcrumbs(); ?>
             <h1>Monogram Appliance Repair Services</h1>
-            <p>Professional Monogram appliance repair for every appliance in your home. Factory-certified parts, same-day service, and a 90-day labor warranty on every repair.</p>
+            <p>Professional Monogram appliance repair for every appliance in your home. Factory-certified parts, same-day service, and a 30-day labor warranty on every repair.</p>
         </div>
     </section>
 
@@ -300,7 +450,7 @@ if ( is_post_type_archive( 'error_code' ) ) :
 
                 <h3 style="margin-top:32px;margin-bottom:12px;">Our Repair Process</h3>
                 <p style="color:var(--color-gray);">Every Monogram repair starts with a thorough diagnostic. Our technician arrives with factory-level diagnostic tools and a stocked service vehicle carrying the most common OEM Monogram replacement parts. After identifying the fault, we provide a clear, upfront quote before any work begins. There are no hidden labor charges and no surprise fees. Once you approve the quote, we complete the repair — typically within the same visit — and run a full test cycle before leaving your home.</p>
-                <p style="color:var(--color-gray);margin-top:12px;">Every repair is backed by our 90-day labor warranty. If the same fault returns within 90 days of service, we return and fix it at no additional charge. We stand behind our work because we know Monogram appliances and we know how to fix them correctly the first time.</p>
+                <p style="color:var(--color-gray);margin-top:12px;">Every repair is backed by our 30-day labor warranty. If the same fault returns within 30 days of service, we return and fix it at no additional charge. We stand behind our work because we know Monogram appliances and we know how to fix them correctly the first time.</p>
 
                 <h3 style="margin-top:32px;margin-bottom:12px;">Same-Day Service Available</h3>
                 <p style="color:var(--color-gray);">A broken appliance disrupts your household. We offer same-day and next-day service appointments across all our service areas. Call <a href="tel:<?php echo BRP_PHONE_RAW; ?>"><?php echo BRP_PHONE; ?></a> or use the booking form below to schedule your repair. We confirm appointments quickly and send a technician who arrives on time, prepared to complete your repair in a single visit.</p>
@@ -317,8 +467,8 @@ if ( is_post_type_archive( 'error_code' ) ) :
     <section class="page-hero">
         <div class="container">
             <?php brp_breadcrumbs(); ?>
-            <h1>Monogram Appliance Repair — Service Areas</h1>
-            <p>We provide expert Monogram appliance repair across 6 major U.S. metropolitan areas and their surrounding suburbs. Same-day and next-day appointments available.</p>
+            <h1>Monogram Appliance Repair Near You</h1>
+            <p>Looking for reliable appliance repair near you? We send certified Monogram technicians to 6 major U.S. cities and all surrounding suburbs — often the same day you call.</p>
         </div>
     </section>
 
@@ -326,8 +476,8 @@ if ( is_post_type_archive( 'error_code' ) ) :
         <div class="container">
 
             <div class="section-header text-center" style="max-width:800px;margin:0 auto 48px;">
-                <span class="section-label">Where We Work</span>
-                <h2 class="section-title">Cities We Service</h2>
+                <span class="section-label">Local Service Areas</span>
+                <h2 class="section-title">Cities We Serve</h2>
             </div>
 
             <div class="city-cards-grid">
@@ -355,22 +505,22 @@ if ( is_post_type_archive( 'error_code' ) ) :
 
             <!-- Intro text -->
             <div style="max-width:800px;margin:48px auto 0;text-align:center;">
-                <p class="section-desc">Same-day and next-day Monogram appliance repair available in all service areas. Select your city for local contact details, coverage information, and service availability.</p>
-                <p style="color:var(--color-gray);margin-top:12px;">Our service network covers major metropolitan areas across the United States. Each location is staffed by factory-trained Monogram technicians who are familiar with the specific installation environments common in that region — from high-rise condominiums and townhomes to large single-family residences. We carry a full inventory of OEM Monogram parts on every service vehicle, ensuring that most repairs in your area can be completed on the first visit. Whether you need a refrigerator repaired in a high-rise or a range serviced in a suburban home, our local technicians provide the same level of certified expertise. Click your city below to view local service details, coverage zip codes, and contact information.</p>
+                <p class="section-desc">Same-day and next-day appointments are available across all our service areas. Click your city to see local coverage, neighborhoods we serve, and how to book fast.</p>
+                <p style="color:var(--color-gray);margin-top:12px;">We know how frustrating it is when a refrigerator stops cooling or a range won't heat. That's why we focus on getting a technician to your door quickly — not in a week, but today or tomorrow. Every tech on our team works exclusively on Monogram appliances, so they walk in knowing your machine, carrying the right parts, and ready to get it fixed in one visit.</p>
             </div>
 
             <!-- SEO content block -->
             <div style="max-width:800px;margin:64px auto 0;border-top:1px solid var(--color-gray-light);padding-top:48px;">
-                <h2 style="margin-bottom:16px;">Certified Monogram Appliance Repair in Your Area</h2>
-                <p style="color:var(--color-gray);">Monogram appliances are high-performance machines that require technicians with specific product knowledge and access to genuine OEM replacement parts. A standard appliance repair company may be unfamiliar with Monogram's integrated cooling systems, professional range configurations, or the diagnostics behind a Monogram error code. Our service network is built around Monogram expertise — every technician in every city we cover has been trained specifically on Monogram product lines and arrives stocked with the most common Monogram parts.</p>
-                <p style="color:var(--color-gray);margin-top:12px;">We provide service across major U.S. metropolitan areas. Each service area includes the city center and all surrounding suburbs within the metropolitan region. You don't need to be in the city itself to get fast service — our technicians cover the broader metro area and can typically reach you the same day or the next business day.</p>
+                <h2 style="margin-bottom:16px;">Why Homeowners Trust Us for Local Appliance Repair</h2>
+                <p style="color:var(--color-gray);">When you search for appliance repair near me, you want someone local who actually shows up on time, knows what they're doing, and charges a fair price. That's exactly what we do. Our technicians live and work in the same metro areas you do. They're not dispatched from across the state — they're already nearby, which means faster response times and easier scheduling.</p>
+                <p style="color:var(--color-gray);margin-top:12px;">We specialize in Monogram appliances because these are premium machines built to tighter specs than standard brands. They need a tech who understands Monogram's control systems, error codes, and OEM parts — not someone who works on everything from every brand and guesses their way through a repair. Our focus makes us faster and more accurate than a general appliance repair company.</p>
 
-                <h3 style="margin-top:32px;margin-bottom:12px;">What to Expect When You Book</h3>
-                <p style="color:var(--color-gray);">When you schedule a Monogram appliance repair through our service, you can expect a confirmed appointment window, a technician who arrives on time, and a clear diagnosis with an upfront quote before any work begins. We do not charge hidden fees. The quote you receive is the price you pay. After completing the repair, we test the appliance through a full cycle to confirm it is operating correctly before we leave.</p>
-                <p style="color:var(--color-gray);margin-top:12px;">All repairs come with our 90-day labor warranty. If the same fault returns within 90 days, we come back and resolve it at no additional cost. Select your city above to view local service details, zip codes covered, and local contact information for scheduling.</p>
+                <h3 style="margin-top:32px;margin-bottom:12px;">What Happens After You Call</h3>
+                <p style="color:var(--color-gray);">You call or book online, we confirm your appointment window the same day, and a technician arrives on time with the tools and parts needed to diagnose and repair your appliance. Before we touch anything, we give you a straight, upfront quote — no hidden fees, no surprises. You say yes, we fix it, then we run a full test to make sure everything works before we leave.</p>
+                <p style="color:var(--color-gray);margin-top:12px;">Every repair comes with a 30-day labor warranty. If the same problem comes back within 30 days, we return and fix it at no extra charge. We stand behind every job we do.</p>
 
-                <h3 style="margin-top:32px;margin-bottom:12px;">Appliances We Service in Every City</h3>
-                <p style="color:var(--color-gray);">Regardless of which city you're in, our technicians service the full range of Monogram appliances — refrigerators, dishwashers, ranges, wall ovens, cooktops, speed ovens, wine coolers, range hoods, washers, and dryers. Whether you have a built-in column refrigerator, a 48-inch professional range, or an integrated panel-ready dishwasher, we have the training and parts to fix it correctly. Call <a href="tel:<?php echo BRP_PHONE_RAW; ?>"><?php echo BRP_PHONE; ?></a> to speak with a local scheduler or book online below.</p>
+                <h3 style="margin-top:32px;margin-bottom:12px;">All Monogram Appliances, Every City</h3>
+                <p style="color:var(--color-gray);">No matter which city you're in, we service the full lineup of Monogram appliances: refrigerators, dishwashers, ranges, wall ovens, cooktops, speed ovens, wine coolers, range hoods, washers, and dryers. Built-in column fridge, 48-inch pro range, panel-ready dishwasher — we've fixed them all. Call <a href="tel:<?php echo BRP_PHONE_RAW; ?>"><?php echo BRP_PHONE; ?></a> to speak with a local scheduler or book online below.</p>
             </div>
 
         </div>
@@ -391,7 +541,7 @@ if ( is_post_type_archive( 'error_code' ) ) :
                 else the_archive_title();
             ?></h1>
             <p><?php
-                if ( is_post_type_archive( 'service' ) ) echo 'Professional Monogram appliance repair for every appliance in your home. Factory-certified parts, same-day service, 90-day warranty.';
+                if ( is_post_type_archive( 'service' ) ) echo 'Professional Monogram appliance repair for every appliance in your home. Factory-certified parts, same-day service, 30-day warranty.';
                 elseif ( is_post_type_archive( 'city' ) ) echo 'We provide expert Monogram appliance repair across 6 major U.S. metropolitan areas and their surrounding suburbs.';
                 elseif ( is_post_type_archive( 'recall' ) ) echo 'Current and historical Maytag appliance safety recall information. Check if your appliance is affected.';
                 else the_archive_description();

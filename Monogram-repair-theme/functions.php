@@ -98,6 +98,19 @@ add_action( 'wp_loaded', function() {
     set_transient( 'brp_terms_email_fix_done_v2', true, YEAR_IN_SECONDS );
 } );
 
+// ONE-TIME: Fix terms-of-use Contact section — replace service@monogramrepairpro.com
+add_action( 'wp_loaded', function() {
+    if ( get_transient( 'brp_terms_service_email_fix_v1' ) ) return;
+    $page = get_page_by_path( 'terms-of-use' );
+    if ( $page ) {
+        $content = str_replace( 'service@monogramrepairpro.com', 'info@monogramsupportcenter.com', $page->post_content );
+        if ( $content !== $page->post_content ) {
+            wp_update_post( array( 'ID' => $page->ID, 'post_content' => $content ) );
+        }
+    }
+    set_transient( 'brp_terms_service_email_fix_v1', true, YEAR_IN_SECONDS );
+} );
+
 // ONE-TIME: Fix mobile-terms Help section — replace service@ email and (800) phone format
 add_action( 'wp_loaded', function() {
     if ( get_transient( 'brp_mobile_terms_help_fix_v1' ) ) return;
@@ -166,6 +179,27 @@ add_action( 'wp_loaded', function() {
     set_transient( 'brp_error_codes_v5_done', true, YEAR_IN_SECONDS );
 } );
 
+// Auto-populate error codes v6 — replace dryer codes with E1–E7, F01–F07
+add_action( 'wp_loaded', function() {
+    if ( get_transient( 'brp_error_codes_v6_done' ) ) return;
+    include get_template_directory() . '/inc/create-error-codes-v6.php';
+    set_transient( 'brp_error_codes_v6_done', true, YEAR_IN_SECONDS );
+} );
+
+// Auto-populate error codes v7 — add dishwasher F-series codes
+add_action( 'wp_loaded', function() {
+    if ( get_transient( 'brp_error_codes_v7_done' ) ) return;
+    include get_template_directory() . '/inc/create-error-codes-v7.php';
+    set_transient( 'brp_error_codes_v7_done', true, YEAR_IN_SECONDS );
+} );
+
+// Auto-populate error codes v8 — replace cooktop codes with E0–E9, Er22, Er31, Er39, Er47
+add_action( 'wp_loaded', function() {
+    if ( get_transient( 'brp_error_codes_v8_done' ) ) return;
+    include get_template_directory() . '/inc/create-error-codes-v8.php';
+    set_transient( 'brp_error_codes_v8_done', true, YEAR_IN_SECONDS );
+} );
+
 // Auto-populate error codes once
 add_action( 'wp_loaded', function() {
     if ( get_transient( 'brp_error_codes_done' ) ) return;
@@ -212,7 +246,7 @@ add_action( 'wp_loaded', function() {
     set_transient( 'brp_privacy_suggested_text_removed', true, YEAR_IN_SECONDS );
 } );
 
-define( 'BRP_VERSION', '1.0.7' );
+define( 'BRP_VERSION', '1.1.0' );
 define( 'BRP_DIR', get_template_directory() );
 define( 'BRP_URI', get_template_directory_uri() );
 define( 'BRP_PHONE', '844-752-7887' );
@@ -278,8 +312,18 @@ function brp_enqueue_assets() {
 
     // Inline CSS overrides — bypasses Hostinger LiteSpeed Cache on static files
     wp_add_inline_style( 'brp-main', '
-        .sidebar-phone-number { color: #0057a8 !important; }
-        :root { --color-gray: #3d4451; }
+        body { background: #FAF6EE !important; }
+        .site-logo-name, .site-logo-name span { color: #ffffff !important; }
+        .sidebar-phone-number { color: #5C3D2E !important; }
+        :root {
+            --color-gray: #3d4451;
+            --color-light: #F5ECD7;
+            --color-primary: #5C3D2E;
+            --color-primary-dark: #3d2b1f;
+            --color-secondary: #5C3D2E;
+            --color-secondary-light: #7a5244;
+            --color-accent: #a0785a;
+        }
         .text-muted, .section-subtitle, .breadcrumbs, .breadcrumbs a { color: #3d4451 !important; }
         .header-inner { justify-content: space-between !important; }
         .site-logo { flex-shrink: 0 !important; }
@@ -288,43 +332,46 @@ function brp_enqueue_assets() {
         .header-phone { font-size: 1.1rem !important; }
         .header-cta { gap: 28px !important; }
 
-        /* Header & footer — dark blue */
-        .site-header { background: #072264 !important; box-shadow: 0 2px 20px rgba(0,0,0,0.3) !important; }
-        .site-footer { background: #072264 !important; }
-        @media (max-width: 1024px) { .main-nav { background: #072264 !important; } }
+        /* Header & footer — brown */
+        .site-header { background: #5C3D2E !important; box-shadow: 0 2px 20px rgba(0,0,0,0.3) !important; }
+        .site-footer { background: #5C3D2E !important; }
+        @media (max-width: 1024px) { .main-nav { background: #5C3D2E !important; } }
 
         /* Book Now button — white bg + dark text for visibility on dark header */
-        .header-cta .btn-primary { background: #ffffff !important; color: #072264 !important; border-color: #ffffff !important; font-weight: 700 !important; }
-        .header-cta .btn-primary:hover { background: #e3eaf7 !important; color: #072264 !important; border-color: #e3eaf7 !important; }
+        .header-cta .btn-primary { background: #ffffff !important; color: #5C3D2E !important; border-color: #ffffff !important; font-weight: 700 !important; }
+        .header-cta .btn-primary:hover { background: #f5ece6 !important; color: #5C3D2E !important; border-color: #f5ece6 !important; }
 
         /* Service card images — uniform size, cover fill */
-        .service-card-img-wrap { height: 260px !important; background: #f0f7ff !important; }
+        .service-card-img-wrap { height: 260px !important; background: #F5ECD7 !important; }
         .service-card-img-wrap img { object-fit: cover !important; object-position: center center !important; }
 
         /* Repair page appliance image — full width at top, text below */
-        .appliance-image { width: 100% !important; max-width: 100% !important; margin: 0 0 32px 0 !important; height: 360px !important; border-radius: var(--border-radius-lg) !important; }
+        .appliance-image { width: 100% !important; max-width: 100% !important; margin: 0 0 32px 0 !important; height: 360px !important; border-radius: var(--border-radius-lg) !important; background: #F5ECD7 !important; }
         .appliance-image img { width: 100% !important; height: 100% !important; object-fit: cover !important; object-position: center center !important; }
 
-        /* Hero (esas sehife, header altı) — aga yaxin aciq mavi */
-        .hero { background: #dbeafe !important; }
-        .hero h1 { color: #0d47a1 !important; }
-        .hero h1 span { color: #1976d2 !important; }
-        .hero-subtitle { color: #1a3a6c !important; }
-        .hero-badge { background: rgba(25,118,210,0.1) !important; border-color: rgba(25,118,210,0.3) !important; color: #1565c0 !important; }
-        .hero-stat { background: rgba(255,255,255,0.75) !important; border-color: rgba(25,118,210,0.2) !important; box-shadow: 0 4px 16px rgba(0,0,0,0.08) !important; }
-        .hero-stat-number { color: #0d47a1 !important; text-shadow: none !important; }
-        .hero-stat-label { color: #1a3a6c !important; }
+        /* Hero (esas sehife, header altı) — bej */
+        .hero { background: #F5ECD7 !important; }
+        .hero h1 { color: #3d2b1f !important; }
+        .hero h1 span { color: #5C3D2E !important; }
+        .hero-subtitle { color: #6b4c3b !important; }
+        .hero-badge { background: rgba(92,61,46,0.12) !important; border-color: rgba(92,61,46,0.3) !important; color: #5C3D2E !important; }
+        .hero-stat { background: rgba(255,255,255,0.55) !important; border-color: rgba(92,61,46,0.15) !important; box-shadow: 0 4px 16px rgba(92,61,46,0.10) !important; }
+        .hero-stat-number { color: #3d2b1f !important; text-shadow: none !important; }
+        .hero-stat-label { color: #6b4c3b !important; }
 
-        /* Page-hero (diger sehifeler, header altı) — aga yaxin aciq mavi */
-        .page-hero { background: #dbeafe !important; }
-        .page-hero h1 { color: #0d47a1 !important; }
-        .page-hero p { color: #1a3a6c !important; }
+        /* Page-hero (diger sehifeler, header altı) — bej */
+        .page-hero { background: #FAF6EE !important; }
+        .page-hero h1 { color: #3d2b1f !important; }
+        .page-hero p { color: #6b4c3b !important; }
 
-        /* Appointment section (footer ustü) — aga yaxin aciq mavi */
-        .appointment-section { background: #dbeafe !important; }
-        .appointment-info h2 { color: #0d47a1 !important; }
-        .appointment-info p { color: #1a3a6c !important; }
-        .appointment-features li { color: #1a3a6c !important; }
+        /* Appointment section (footer ustü) — bej */
+        .appointment-section { background: #FAF6EE !important; color: #3d2b1f !important; }
+        .appointment-info h2 { color: #3d2b1f !important; }
+        .appointment-info p { color: #6b4c3b !important; }
+        .appointment-features li { color: #6b4c3b !important; }
+        .ec-cat-card { background: #ffffff !important; }
+        .appointment-features li::before { background: none !important; border-radius: 0 !important; width: auto !important; height: auto !important; font-size: 1rem !important; }
+        .appointment-form-wrapper { padding: 6px !important; width: 92% !important; margin: 0 auto !important; overflow: hidden !important; }
 
         /* ============================================================
            MOBİL UYĞUNLAŞDIRMA — yalnız kiçik ekranlar (desktop dəyişmir)
@@ -1209,14 +1256,13 @@ function brp_appointment_form( $title = 'Schedule Your Repair Today' ) {
                     <ul class="appointment-features">
                         <li>Factory-certified replacement parts</li>
                         <li>Highly trained, background-checked technicians</li>
-                        <li>90-day labor warranty</li>
+                        <li>30-day labor warranty</li>
                         <li>Same-day service available</li>
                         <li>Upfront, transparent pricing</li>
-                        <li>All major appliance brands accepted</li>
                     </ul>
                 </div>
                 <div class="appointment-form-wrapper">
-                    <iframe id="appointmentIframe" src="https://webform.proleadservice.com/?ref_id=478" width="100%" style="min-height: 650px;" frameborder="0"></iframe>
+                    <iframe id="appointmentIframe" src="https://webform.proleadservice.com/?ref_id=478" width="100%" style="min-height: 475px;" frameborder="0"></iframe>
                 </div>
             </div>
         </div>
@@ -1456,7 +1502,7 @@ function brp_get_faqs_for_appliance( $appliance ) {
         'default' => array(
             array( 'q' => 'Do you use genuine Monogram parts?', 'a' => 'Yes. We use only genuine GE Monogram replacement parts to ensure your appliance performs to factory specifications and your warranty remains intact.' ),
             array( 'q' => 'How quickly can you come out for a Monogram appliance repair?', 'a' => 'We offer same-day and next-day appointments in all our service areas. Call us or use the online booking form and we\'ll have a certified technician at your door within 24 hours.' ),
-            array( 'q' => 'Do you offer a warranty on your repairs?', 'a' => 'Yes. Every repair includes a 90-day labor warranty. If the same issue returns within 90 days, we come back and fix it free of charge. Parts carry the manufacturer\'s guarantee.' ),
+            array( 'q' => 'Do you offer a warranty on your repairs?', 'a' => 'Yes. Every repair includes a 30-day labor warranty. If the same issue returns within 30 days, we come back and fix it free of charge. Parts carry the manufacturer\'s guarantee.' ),
             array( 'q' => 'Are your technicians certified to work on Monogram appliances?', 'a' => 'Our technicians are factory-trained, certified, and regularly updated on the latest Monogram appliance models and repair techniques. They arrive with a fully stocked service vehicle.' ),
             array( 'q' => 'Is your service affiliated with GE Monogram?', 'a' => 'No — we are an independent appliance repair company specializing in Monogram products. We are not affiliated with or endorsed by GE Appliances, LLC. "Monogram" is a registered trademark of GE Appliances used here for identification only.' ),
         ),
@@ -1578,7 +1624,7 @@ function brp_get_auto_meta_description() {
     global $post;
 
     if ( is_front_page() ) {
-        return 'Expert Monogram appliance repair with same-day service in Chicago, Los Angeles, New York, Houston, Miami, and San Francisco. Factory-certified parts, 90-day labor warranty.';
+        return 'Expert Monogram appliance repair with same-day service in Chicago, Los Angeles, New York, Houston, Miami, and San Francisco. Factory-certified parts, 30-day labor warranty.';
     }
 
     if ( is_singular() && $post ) {
@@ -1812,12 +1858,12 @@ add_filter( 'get_site_icon_url', '__return_empty_string' );
 add_action( 'wp_head', function() {
     echo '<style id="brp-fixes">
         /* Phone number in all white-bg sections */
-        .sidebar-phone-number { color: #0057a8 !important; }
+        .sidebar-phone-number { color: #5C3D2E !important; }
         .page-hero .btn-secondary,
         .hero .btn-secondary {
             background: #fff !important;
-            border-color: #fff !important;
-            color: #0057a8 !important;
+            border-color: #5C3D2E !important;
+            color: #5C3D2E !important;
         }
     </style>';
 }, 99 );
