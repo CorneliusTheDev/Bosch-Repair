@@ -37,11 +37,11 @@
                     <a href="mailto:<?php echo BRP_EMAIL; ?>" style="color:white;font-weight:700;font-size:0.95rem;"><?php echo BRP_EMAIL; ?></a>
                 </div>
                 <div style="display:flex;gap:16px;margin-top:16px;">
-                    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;color:white;font-weight:800;font-size:0.95rem;text-decoration:none;">
+                    <a href="https://www.facebook.com/MonogramApplianceRepair" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;color:white;font-weight:800;font-size:0.95rem;text-decoration:none;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
                         Facebook
                     </a>
-                    <a href="https://www.tumblr.com" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;color:white;font-weight:800;font-size:0.95rem;text-decoration:none;">
+                    <a href="https://www.tumblr.com/blog/werepairmonogram" target="_blank" rel="noopener noreferrer" style="display:inline-flex;align-items:center;gap:6px;color:white;font-weight:800;font-size:0.95rem;text-decoration:none;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14.563 24c-5.093 0-7.031-3.756-7.031-6.411V9.747H5.116V6.648c3.63-1.313 4.512-4.596 4.71-6.469C9.84.051 9.941 0 9.999 0h3.517v6.114h4.801v3.633h-4.82v7.47c.016 1.001.375 2.371 2.547 2.371h.028a4.9 4.9 0 0 0 2.245-.572v3.596a10.5 10.5 0 0 1-3.754.388z"/></svg>
                         Tumblr
                     </a>
